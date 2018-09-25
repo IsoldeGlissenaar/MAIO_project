@@ -31,6 +31,7 @@ f.close()
 
 #%%
 
+# Plot a value
 len_ = len(ulve)
 T_surf = np.zeros(shape=(len_))
 
@@ -64,7 +65,7 @@ for i in range(0,len(ulve_values)):
             ulve_float[i][j] = np.nan
 
 # pick variable
-column = 26
+column = 2
 temp = np.zeros(shape=(len(ulve_float)))
 for i in range(0,len(ulve_float)):
     temp[i] = ulve_float[i][column]
@@ -90,5 +91,8 @@ for i in range(1,len(temp)):
         else:
             store = temp[i]
             days = 1.
+            
+plt.plot(daily, '.')
+plt.show()
 
 
