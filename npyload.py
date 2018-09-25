@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 25 10:16:10 2018
+
+@author: d-vz
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+#listnorden=['WD', 'WS', 'WSm', 'Sin', 'Sout', 'Lin', 'Lout', 'Trad', 'Tsurf', 'Tpot', 'T', 'T2m', 'q', 'RH', 'P', 'H1', 'Q1', 'H2', 'Q2', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'A1', 'A2', 'Bat', 'Tint', 'Stoa', 'Qual', 'AWSid']
+listulven=['TC1avg[C]', 'TC2avg[C]', 'TSURF[C]', 'TSTR1[C]', 'TSTR2[C]', 'TSTR3[C]', 'TSTR4[C]', 'TSTR5[C]', 'TSTR6[C]', 'TSTR7[C]', 'TSTR8[C]', 'THUTavg[C]', 'THUT2m[K]', 'THUTpot[K]', 'RHWavg[%]', 'SPECHUM[gkg]', 'HWSavg[ms]', 'HWSmax[ms]', 'HWDavg[deg]', 'Stoa[Wm2]', 'NRUavg[Wm2]', 'NRLavg[Wm2]', 'NRIUavg[Wm2]', 'NRILavg[Wm2]', 'NRTavg[C]', 'BAP[hPa]', 'SSH[m]', 'ADW[m]', 'MCH[deg]', 'TILTX[deg]', 'TILTY[deg]', 'LON[deg]', 'LAT[deg]', 'HMSL[m]', 'VBAT[V]', 'LBUT[days]', 'Qual', 'AWSid']
+
+#Datenorden=np.load("Nordenbreen/Date.npy")
+Dateulve=np.load("Ulvebreen/Date.npy")
+
+ulve={}
+for i in listulven:
+        ulve["{0}".format(i)]=np.load("Ulvebreen/"+i+".npy")   
+        fig=plt.figure(i, figsize=(11, 4))
+        plt.scatter(Dateulve, ulve[i], markersize = 2)
+        plt.title(i)
+        plt.show
+'''
+norden={}
+for i in listnorden:
+        norden["{0}".format(i)]=np.load(i+".npy")   
+        fig=plt.figure(i, figsize=(11, 4))
+        plt.plot(norden[i], '.', markersize = 2)
+        plt.title(i)
+        plt.show
+'''
