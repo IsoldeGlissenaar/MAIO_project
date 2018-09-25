@@ -48,8 +48,8 @@ plt.show
 ulve_values=[]      
 ulve_notitle = ulve[1:len(ulve)][:]
 
-for i in range (0,53670):
-    z = ulve_notitle[i][3:41]
+for i in range (0,len(ulve)-1):
+    z = ulve_notitle[i][3:len(ulve[0])]
     y = [value for value in z]
     ulve_values.append(y)
 
@@ -60,7 +60,7 @@ ulve_float = []
 for i in range(0,len(ulve_values)):
     y = [float(k) for k in ulve_values[i]]
     ulve_float.append(y)
-    for j in range(0,38):
+    for j in range(0,len(ulve[0])-3):
         if ulve_float[i][j]==(-999.5) or ulve_float[i][j]==(-999.3):
             ulve_float[i][j] = np.nan
 
