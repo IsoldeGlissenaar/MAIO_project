@@ -1,4 +1,5 @@
 Columns in OUTPUT AWS routine
+
 Date Hour 	= date time (yyyy-mm-dd hh:mm)
 
 Day 		= day of year  
@@ -108,7 +109,7 @@ THUTavg[C]		= MAIN HUT TEMPERATURE
 THUT2m[K]		= 2m temperature based on THUTavg and SSH
  
 THUTpot[K]		= potential temperature based on THUTavg and BAP
- 
+
 RHWavg[%]		= RELATIVE HUMIDITY corrected for air temperature
  
 SPECHUM[g/kg]	= specific humidity based on THUTavg and BAP

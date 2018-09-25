@@ -80,6 +80,3 @@ for i in range(1,len(ulve)-1):
 np.save(direc+ 'Date.npy', date_file)
 
 
-#%%
-
-
