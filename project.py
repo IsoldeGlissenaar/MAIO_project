@@ -92,7 +92,7 @@ for i in range(1,len(temp)):
             store = temp[i]
             days = 1.
             
-plt.plot(daily, '.')
+plt.plot(daily, '.', markersize= 2 )
 plt.show()
 
 
