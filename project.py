@@ -48,7 +48,7 @@ for i in range(0,len(ulve_values)):
     y = [float(k) for k in ulve_values[i]]
     ulve_float.append(y)
     for j in range(0,len(ulve[0])-2):
-        if ulve_float[i][j]==(-999.5) or ulve_float[i][j]==(-999.3):
+        if ulve_float[i][j]<-990:
             ulve_float[i][j] = np.nan
             
 #%%
