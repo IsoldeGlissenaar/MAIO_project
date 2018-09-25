@@ -30,6 +30,7 @@ for line in f.readlines():
 f.close()
 
 #%%
+'ULVEBREEN'
 
 #Create array with only values (no headings or dates)
 ulve_values=[]      
@@ -80,3 +81,49 @@ for i in range(1,len(ulve)-1):
 np.save(direc+ 'Date.npy', date_file)
 
 
+
+#%%
+'NORDENSKIOLD'
+
+norden_values=[]      
+norden_notitle = norden[1:len(norden)][:]
+
+for i in range (0,len(norden)-1):
+    z = norden_notitle[i][2:len(norden[0])]
+    y = [value for value in z]
+    norden_values.append(y)
+
+
+#make nan
+norden_float = []
+
+for i in range(0,len(norden_values)):
+    y = [float(k) for k in norden_values[i]]
+    norden_float.append(y)
+    for j in range(0,len(norden[0])-2):
+        if norden_float[i][j]<-990:
+            norden_float[i][j] = np.nan
+
+#%%
+direc = 'C:/Users/Isolde/Documents/GitHub/MAIO_project/Nordenskioldbreen/'
+
+# Plot a value
+for j in range(0,len(norden_float[0])):
+    len_ = len(norden)
+    temp_file = np.zeros(shape= (len(norden_float)-1) )
+
+    for i in range(0,len(norden_float)-1):
+        temp_file[i] = norden_float[i][j]
+    
+    np.save(direc+ norden[0][j+2] +'.npy', temp_file)
+
+
+#%%
+
+len_ = len(norden)
+date_file = np.zeros(shape=(len(norden)-2), dtype='datetime64[s]')
+
+for i in range(1,len(norden)-1):
+    date_file[i-1] = norden[i][0] + 'T'+norden[i][1]
+    
+np.save(direc+ 'Date.npy', date_file)
