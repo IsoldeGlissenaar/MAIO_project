@@ -7,7 +7,7 @@ Created on Thu Sep 20 16:36:10 2018
 
 #import modules
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 #Open files
 f = open( "aws_ulvebreen.txt" )
@@ -81,37 +81,5 @@ np.save(direc+ 'Date.npy', date_file)
 
 
 #%%
-
-
-# pick variable
-column = 2
-temp = np.zeros(shape=(len(ulve_float)))
-for i in range(0,len(ulve_float)):
-    temp[i] = ulve_float[i][column]
-
-# Calculate daily values
-store = temp[0]
-days = 1.
-nomeasure = 0
-daily = np.zeros(shape=0)
-for i in range(1,len(temp)):
-    if ulve_notitle[i][0]==ulve_notitle[i-1][0]:
-        if np.isnan(temp[i]):
-            nomeasure = nomeasure +1
-        else:
-            store = store + temp[i]
-            days = days + 1.
-    else:
-        daily = np.append(daily, [store/days])
-        if np.isnan(temp[i]):
-            nomeasure = nomeasure+1
-            days = 0.
-            store = 0
-        else:
-            store = temp[i]
-            days = 1.
-            
-plt.plot(daily, '.', markersize= 2 )
-plt.show()
 
 
