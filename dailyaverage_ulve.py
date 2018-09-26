@@ -51,7 +51,33 @@ for j in listulven:
                     else:
                         store = ulve[j][i]
                         days = 1.
-            
+        fig=plt.figure()
         plt.plot(daily,'.')
         plt.title(j + ' daily average')
-        plt.show()
+        plt.grid(True); plt.show() # show plot on screen
+        fig.savefig("Figures/dailyaverage_"+j+".png")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

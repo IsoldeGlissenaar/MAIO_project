@@ -24,17 +24,19 @@ store=[]
 td=np.timedelta64(1,'D')
 start=np.datetime64('2015-08-23T00:00')
 stop=start+td
+year=2016
 
 for i in range(days):
     startindex=np.where(date==start)
     stopindex=np.where(date==stop)
-    if stopindex[0] is None:
-        stop=stop+td
-        stopindex=np.where(date==stop)
-    print(start,stop)
+    if stop ==  np.datetime64(str(year)+'-01-01T00:00'):
+        stopindex=startindex[0]+48
+        year=year+1
+        x=np.nanmean(T_surf[int(startindex[0]):int(stopindex)])
+    else:
+        x=np.nanmean(T_surf[int(startindex[0]):int(stopindex[0])])
+    print(start, stop)
     print(startindex, stopindex)
-    
-    x=np.nanmean(T_surf[int(startindex[0]):int(stopindex[0])])
     store.append(x)
     start=start+td
     stop=stop+td
