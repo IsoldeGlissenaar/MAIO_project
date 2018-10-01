@@ -18,33 +18,37 @@ date = np.load('Ulvebreen/Date.npy')
 T_surf = np.load('Ulvebreen/TSURF[C].npy')
 
 # Calculate daily values
-days = 133
+days = 1117
 
 store=[]
 td=np.timedelta64(1,'D')
 start=np.datetime64('2015-08-23T00:00')
 stop=start+td
 year=2016
+k=0
 
 for i in range(days):
+    print(i, year)
     startindex=np.where(date==start)
-    stopindex=np.where(date==stop)
-    if stop ==  np.datetime64(str(year)+'-01-01T00:00'):
-        stopindex=startindex[0]+48
+    stopindex=np.where(date==stop)    
+    print(start,stop)
+    print(startindex, stopindex)
+    if k == 1:
+        x=np.nanmean(T_surf[int(stopyear[0]):int(stopindex[0])])  
         year=year+1
-        x=np.nanmean(T_surf[int(startindex[0]):int(stopindex)])
+        k=0
+    elif stop ==  np.datetime64(str(year)+'-01-01T00:00'):
+        stopyear=startindex[0]+48
+        x=np.nanmean(T_surf[int(startindex[0]):int(stopyear[0])])
+        k=1
     else:
         x=np.nanmean(T_surf[int(startindex[0]):int(stopindex[0])])
-    print(start, stop)
-    print(startindex, stopindex)
-    store.append(x)
-    start=start+td
     stop=stop+td
-    
-print(store)
+    start=start+td
+    store.append(x)
             
-plt.plot(store, '.', markersize= 5 )
-plt.show()
+plt.plot(store, '.', markersize= 5 ); 
+plt.title(); plt.grid(True); plt.show()
 
 
 
