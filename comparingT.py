@@ -31,7 +31,7 @@ TSTR5[C]		= SNOW TEMPERATURE STRING 5
 TSTR6[C]		= SNOW TEMPERATURE STRING 6
 TSTR7[C]		= SNOW TEMPERATURE STRING 7
 TSTR8[C]		= SNOW TEMPERATURE STRING 8
-THUTavg[C]		= MAIN HUT TEMPERATURE
+THUTavg[C]		= MAIN HUT TEMPERATURE = Temperature head Transmitter (HUT)
 THUT2m[K]		= 2m temperature based on THUTavg and SSH
 THUTpot[K]		= potential temperature based on THUTavg and BAP
 '''
