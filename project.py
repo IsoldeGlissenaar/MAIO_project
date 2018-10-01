@@ -74,9 +74,8 @@ for i in range(0,len(lufthavn_notitle)):
         if k =='x':
             k = np.nan
         y.append (np.float(k))
-#    y = [float(k) for k in lufthavn_notitle[i]]
     lufthavn_float.append(y)
-    for j in range(0,len(lufthavn[0])-2):
+    for j in range(0,len(lufthavn[0])):
         if lufthavn_float[i][j]<-990:
             lufthavn_float[i][j] = np.nan
             
@@ -117,7 +116,7 @@ for i in range(0,len(isfjord_notitle)):
             k = np.nan
         y.append (np.float(k))
     isfjord_float.append(y)
-    for j in range(0,len(isfjord[0])-2):
+    for j in range(0,len(isfjord[0])):
         if isfjord_float[i][j]<-990:
             isfjord_float[i][j] = np.nan
             
