@@ -29,6 +29,19 @@ for line in f.readlines():
 
 f.close()
 
+
+f = open("lufthavn_data.txt")
+
+lufthavn = []
+for line in f.readlines():
+    y = [value for value in line.split()]
+    lufthavn.append( y )
+
+f.close()
+
+lufthavn = lufthavn[23:][:]
+
+
 #%%
 'ULVEBREEN'
 
