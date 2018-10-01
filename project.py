@@ -42,6 +42,103 @@ f.close()
 lufthavn = lufthavn[23:][:]
 
 
+f = open("isfjord_data.txt")
+
+isfjord = []
+for line in f.readlines():
+    y = [value for value in line.split()]
+    isfjord.append( y )
+
+f.close()
+
+isfjord = isfjord[23:][:]
+
+
+#%%
+#%%
+#%%
+'Lufthavn'
+
+#Create array with only values (no headings or dates)  
+lufthavn_notitle = lufthavn[1:(13869-24)][:]
+
+
+#make nan
+lufthavn_float = []
+#y = np.zeros(shape=(12))
+for i in range(0,len(lufthavn_notitle)):
+    y=[]
+    for k in lufthavn_notitle[i]:
+        if k=='.':
+            k='0.0'
+        if k =='x':
+            k = np.nan
+        y.append (np.float(k))
+#    y = [float(k) for k in lufthavn_notitle[i]]
+    lufthavn_float.append(y)
+    for j in range(0,len(lufthavn[0])-2):
+        if lufthavn_float[i][j]<-990:
+            lufthavn_float[i][j] = np.nan
+            
+#%%
+
+direc = 'C:/Users/Isolde/Documents/GitHub/MAIO_project/Lufthavn/'
+
+# Plot a value
+for j in range(0,len(lufthavn_float[0])):
+    len_ = len(lufthavn)
+    temp_file = np.zeros(shape= (len(lufthavn_float)-1) )
+
+    for i in range(0,len(lufthavn_float)-1):
+        temp_file[i] = lufthavn_float[i][j]
+    
+    np.save(direc+ lufthavn[0][j] +'.npy', temp_file)
+
+
+
+#%%
+#%%
+#%%
+'Isfjord'
+
+#Create array with only values (no headings or dates)  
+isfjord_notitle = isfjord[1:(5886-24)][:]
+
+
+#make nan
+isfjord_float = []
+#y = np.zeros(shape=(12))
+for i in range(0,len(isfjord_notitle)):
+    y=[]
+    for k in isfjord_notitle[i]:
+        if k=='.':
+            k='0.0'
+        if k =='x':
+            k = np.nan
+        y.append (np.float(k))
+    isfjord_float.append(y)
+    for j in range(0,len(isfjord[0])-2):
+        if isfjord_float[i][j]<-990:
+            isfjord_float[i][j] = np.nan
+            
+#%%
+
+direc = 'C:/Users/Isolde/Documents/GitHub/MAIO_project/Isfjord/'
+
+# Plot a value
+for j in range(0,len(isfjord_float[0])):
+    len_ = len(isfjord)
+    temp_file = np.zeros(shape= (len(isfjord_float)-1) )
+
+    for i in range(0,len(isfjord_float)-1):
+        temp_file[i] = isfjord_float[i][j]
+    
+    np.save(direc+ isfjord[0][j] +'.npy', temp_file)
+    
+    
+
+#%%
+#%%
 #%%
 'ULVEBREEN'
 
@@ -95,6 +192,8 @@ np.save(direc+ 'Date.npy', date_file)
 
 
 
+#%%
+#%%
 #%%
 'NORDENSKIOLD'
 
