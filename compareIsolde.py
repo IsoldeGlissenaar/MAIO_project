@@ -15,21 +15,33 @@ T_ulveday=np.load("Ulvebreen/Date.npy")
 T_norden=np.load("Nordenskioldbreen/Tsurf.npy")
 T_nordenday=np.load("Nordenskioldbreen/Date.npy")
 
+T_luft=np.load("Lufthavn/TA.npy")
+T_luftday=np.load("Lufthavn2/Date.npy")
+
 plt.plot(T_ulveday,T_ulve,'.')
 plt.plot(T_nordenday,T_norden,'.')
+plt.plot(T_luftday,T_luft,'.')
 plt.show()
 
 minday = np.min(T_ulveday)
 maxday = np.max(T_nordenday)
 
+delta = np.timedelta64(1,'30m')
+newminday = minday+2*delta
+
 minnord = np.where(T_nordenday == minday)[0][0]
+#minulve = np.where(T_ulveday   == minday)[0][0]
 maxulv  = np.where(T_ulveday   == maxday)[0][0]
+
+#minluft = np.where(T_luftday   == newminday)[0][0]
 
 T_ulve_c =  T_ulve[:maxulv]
 T_ulveday_c = T_ulveday[:maxulv]
 
 T_norden_c =  T_norden[minnord:]
 T_nordenday_c = T_nordenday[minnord:]
+
+#T_luft_c = T_luft[minnord:maxulv]
 
 plt.plot(T_nordenday_c,T_norden_c,'b.')
 plt.plot(T_ulveday_c,T_ulve_c,'g.')
@@ -61,6 +73,7 @@ for i in range(0,len(dates)):
     except IndexError: # catch the error
         continue
 
+
 plt.plot(dates, T_c[:,0],'b.') #nordenskioldbreen
 plt.plot(dates, T_c[:,1],'g.') #ulvebreen
 plt.show()
@@ -69,6 +82,8 @@ for i in range (0,len(dates)):
     for j in range(0,2):
         if np.isnan(T_c[i,j]):
             T_c[i,j]=0
+
+#%%
     
 '''maio method''' 
     

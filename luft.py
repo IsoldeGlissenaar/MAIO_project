@@ -8,9 +8,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import datetime as dt
 
-
-
-
 a=np.load("Lufthavn/TA.npy")
 b=np.load("Lufthavn/Year.npy")
 c=np.load("Lufthavn/Mnth.npy")
@@ -37,6 +34,10 @@ for i in range(13843):
     
 
 new=np.asarray(new)
+
+np.save("Lufthavn2/Date.npy", new)
 #print(new)
 #print(a)
+
+#%%
 plt.plot(new,a)
