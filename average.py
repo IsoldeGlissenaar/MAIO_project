@@ -16,7 +16,7 @@ listulven= ['TC1avg[C]', 'TC2avg[C]', 'TSURF[C]', 'TSTR1[C]', 'TSTR2[C]', 'TSTR3
 dateu = np.load('Ulvebreen/Date.npy')
 
 days = 1117
-'''
+
 for number, name in enumerate(listulven):
     T_surf = np.load('Ulvebreen/'+name+'.npy')
     store=[]
@@ -72,7 +72,7 @@ for number, name in enumerate(listulven):
     plt.plot(day, store, '.', markersize= 5 ); 
     plt.title('Ulvebreen average '+name); plt.grid(True); plt.show()
     fig.savefig('Figures/ulvebreen/avg_' + name)
-'''
+
 # =============================================================================
 #%% Nordenskioldbreen
 # =============================================================================
