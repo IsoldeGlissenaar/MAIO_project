@@ -31,8 +31,8 @@ T_ulveday_c = T_ulveday[:maxulv]
 T_norden_c =  T_norden[minnord:]
 T_nordenday_c = T_nordenday[minnord:]
 
-plt.plot(T_ulveday_c,T_ulve_c,'.')
-plt.plot(T_nordenday_c,T_norden_c,'.')
+plt.plot(T_nordenday_c,T_norden_c,'b.')
+plt.plot(T_ulveday_c,T_ulve_c,'g.')
 plt.show()
 
 
@@ -43,7 +43,7 @@ dates = np.arange('2015-08-22T17:00:00', '2016-12-03T17:00:00', dtype='datetime6
 #miss_nord = list(set(T_ulveday_c)-set(T_nordenday_c))
 
 T_c = np.empty([len(dates),2])
-T_c[:,:] = np.nan
+T_c[:,:] = 0 #np.nan
 
 for i in range(0,len(dates)):
     try:
@@ -61,12 +61,20 @@ for i in range(0,len(dates)):
     except IndexError: # catch the error
         continue
 
-plt.plot(dates, T_c[:,0],'.')
-plt.plot(dates, T_c[:,1],'.')
+plt.plot(dates, T_c[:,0],'b.') #nordenskioldbreen
+plt.plot(dates, T_c[:,1],'g.') #ulvebreen
 plt.show()
 
+for i in range (0,len(dates)):
+    for j in range(0,2):
+        if np.isnan(T_c[i,j]):
+            T_c[i,j]=0
+    
+    
+pca = PCA()
+pc = pca.fit(T_c).transform(T_c)
+exp_var = pca.explained_variance_ratio_
 
-
-
-#pca = PCA()
-
+proj = pca.components_
+proj1 = proj[0,:]
+proj2 = proj[1,:]
