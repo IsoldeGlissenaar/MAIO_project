@@ -38,13 +38,15 @@ for l in range(k+1):
     plt.grid(True); plt.legend(); plt.show();# show plot on screen
     fig.savefig("Figures/compare/compare_n"+listnorden[l]+"_u"+listulven[l]+".png")
 
+# =============================================================================
+#  average   
+# =============================================================================
+
 ulve={}
 for k, i in enumerate(listulven):
         ulve["{0}".format(i)]=np.load("avgUlvebreen/"+i+".npy")   
         ulve["{0}day".format(i)]=np.load("avgUlvebreen/"+i+"day.npy")  
-# =============================================================================
-#  average   
-# =============================================================================
+
 norden={}
 for k, j in enumerate(listnorden):
         norden["{0}".format(j)]=np.load("avgNordenskioldbreen/"+j+".npy")   
@@ -57,3 +59,6 @@ for l in range(k+1):
     plt.title("Comparing average ulvebreen:"+listulven[l]+" and nordenskioldbreen:"+listnorden[l])
     plt.grid(True); plt.legend(); plt.show();# show plot on screen
     fig.savefig("Figures/compare/compare_avg_n"+listnorden[l]+"_u"+listulven[l]+".png")
+
+
+
