@@ -32,10 +32,11 @@ for i in range(13843):
     else: d[i] = str(int(d[i]))    
     if e[i] < 10: e[i] = str(0)+str(int(e[i]))
     else: e[i] = str(int(e[i]))
-    date=np.datetime64(b[i]+"-"+c[i]+"-"+d[i]+"T"+e[i]+":00")
+    date=np.datetime64(b[i]+"-"+c[i]+"-"+d[i]+"T"+e[i]+":00:00")
     new.append(date)
     
+
 new=np.asarray(new)
-print(new)
-print(a)
+#print(new)
+#print(a)
 plt.plot(new,a)
