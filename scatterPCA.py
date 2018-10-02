@@ -52,8 +52,10 @@ def scatterplot(title, x,xtitle,y,ytitle, xlim1, xlim2, ylim1, ylim2, binsx=10, 
 city1="ulvebreen"
 city2="nordenskioldbreen"
 ### Create data
-x1=T_ulve_c 
-y1=T_norden_c
+y1=T_c[:,0]
+y2=T_c[:,1]
+x1=dates
+x2=dates
 
 ### Plot data
 fig=plt.figure('Average Daily Precipitation per Month', figsize=(10,5))
@@ -70,5 +72,5 @@ plt.grid(True); plt.show() # show plot on screen
 title="test"
 xtitle=city1
 ytitle=city2
-fig2 = scatterplot(title, y1, xtitle, y2, ytitle, xlim1=-20 ,xlim2=20 ,ylim1=-20 ,ylim2=20, binsx=20, binsy=20)
+fig2 = scatterplot(title, y1, xtitle, y2, ytitle, xlim1=np.min(y1) ,xlim2=np.max(y1) ,ylim1=np.min(y2) ,ylim2=np.max(y2), binsx=20, binsy=20)
 plt.show()
