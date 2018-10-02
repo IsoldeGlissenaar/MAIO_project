@@ -7,6 +7,7 @@ Created on Thu Sep 20 16:36:10 2018
 
 #import modules
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 #Open files
@@ -57,7 +58,7 @@ isfjord = isfjord[23:][:]
 #%%
 #%%
 #%%
-'Lufthavn'
+'LUFTHAVN'
 
 #Create array with only values (no headings or dates)  
 lufthavn_notitle = lufthavn[1:(13869-24)][:]
@@ -94,11 +95,10 @@ for j in range(0,len(lufthavn_float[0])):
     np.save(direc+ lufthavn[0][j] +'.npy', temp_file)
 
 
-
 #%%
 #%%
 #%%
-'Isfjord'
+'ISFJORD'
 
 #Create array with only values (no headings or dates)  
 isfjord_notitle = isfjord[1:(5886-24)][:]
