@@ -8,7 +8,7 @@ Created on Tue Oct  2 09:30:22 2018
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
-import datetime
+import pandas as pd
 
 direc = "C:/Users/Isolde/Documents/GitHub/MAIO_project/"
 
@@ -20,6 +20,9 @@ T_nordenday=np.load(direc+"Nordenskioldbreen/Date.npy")
 
 T_luft=np.load(direc+"Lufthavn/TA.npy")
 T_luftday=np.load(direc+"Lufthavn2/Date.npy")
+
+
+''' This code cuts the data to the overlapping length'''
 
 plt.plot(T_ulveday,T_ulve,'.')
 plt.plot(T_nordenday,T_norden,'.')
@@ -52,22 +55,28 @@ plt.show()
 
 
 #%%
+'''INCLUDE DATES THAT WERE SKIPPED IN THE MEASUREMENTS
+This part of the code creates an array with values for the nordenskiold
+and the ulvebreen for every half hour, even when there were no measurements for both.
+When there is no value, this is masked.'''
+
 dates = np.arange('2015-08-22T17:00:00', '2016-12-03T17:00:00', dtype='datetime64[30m]')
 
 #miss_ulv = list(set(T_nordenday_c)-set(T_ulveday_c))
 #miss_nord = list(set(T_ulveday_c)-set(T_nordenday_c))
 
 T_c = np.empty([len(dates),2])
-T_c[:,:] = np.nan
+T_c[:,:] = 999   
+    
 
 for i in range(0,len(dates)):
     try:
     # the code that can cause the error
-        loc = np.where((T_nordenday_c == dates[i]) or (T_nordenday_c == (dates[i] -1 sec)))[0][0]
+        loc = np.where((T_nordenday_c == dates[i]))[0][0]
         T_c[i,0] = T_norden_c[loc]
     except IndexError: # catch the error
         continue
-    
+
 for i in range(0,len(dates)):
     try:
     # the code that can cause the error
@@ -81,29 +90,31 @@ plt.plot(dates, T_c[:,0],'b.') #nordenskioldbreen
 plt.plot(dates, T_c[:,1],'g.') #ulvebreen
 plt.show()
 
-#for i in range (0,len(dates)):
-#    for j in range(0,2):
-#        if np.isnan(T_c[i,j]):
-#            T_c[i,0]=0
-#            T_c[i,1]=0
+for i in range (0,len(dates)):
+    for j in range(0,2):
+        if np.isnan(T_c[i,j]):
+            T_c[i,0]=999
+            T_c[i,1]=999
             
-T_mask = np.ma.masked_equal(T_c, np.nan)
+T_mask = np.ma.masked_equal(T_c, 999)
 
 plt.plot(dates, T_mask[:,0],'b.') #nordenskioldbreen
 plt.plot(dates, T_mask[:,1],'g.') #ulvebreen
 plt.show()
 
 #%%
+
+'''PC ANALYSIS TWO METHODS'''
     
 '''maio method''' 
     
-pca = PCA()
-pc = pca.fit(T_c).transform(T_c)
-exp_var = pca.explained_variance_ratio_
-
-proj = pca.components_
-proj1 = proj[0,:]
-proj2 = proj[1,:]
+#pca = PCA()
+#pc = pca.fit(T_c).transform(T_c)
+#exp_var = pca.explained_variance_ratio_
+#
+#proj = pca.components_
+#proj1 = proj[0,:]
+#proj2 = proj[1,:]
   
     
 '''DM method'''
