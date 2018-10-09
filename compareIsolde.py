@@ -8,15 +8,18 @@ Created on Tue Oct  2 09:30:22 2018
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
+import datetime
 
-T_ulve=np.load("Ulvebreen/THUTavg[C].npy")
-T_ulveday=np.load("Ulvebreen/Date.npy")
+direc = "C:/Users/Isolde/Documents/GitHub/MAIO_project/"
 
-T_norden=np.load("Nordenskioldbreen/Tsurf.npy")
-T_nordenday=np.load("Nordenskioldbreen/Date.npy")
+T_ulve=np.load(direc+"Ulvebreen/THUTavg[C].npy")
+T_ulveday=np.load(direc+"Ulvebreen/Date.npy")
 
-T_luft=np.load("Lufthavn/TA.npy")
-T_luftday=np.load("Lufthavn2/Date.npy")
+T_norden=np.load(direc+"Nordenskioldbreen/Tsurf.npy")
+T_nordenday=np.load(direc+"Nordenskioldbreen/Date.npy")
+
+T_luft=np.load(direc+"Lufthavn/TA.npy")
+T_luftday=np.load(direc+"Lufthavn2/Date.npy")
 
 plt.plot(T_ulveday,T_ulve,'.')
 plt.plot(T_nordenday,T_norden,'.')
@@ -55,12 +58,12 @@ dates = np.arange('2015-08-22T17:00:00', '2016-12-03T17:00:00', dtype='datetime6
 #miss_nord = list(set(T_ulveday_c)-set(T_nordenday_c))
 
 T_c = np.empty([len(dates),2])
-T_c[:,:] = 0 #np.nan
+T_c[:,:] = np.nan
 
 for i in range(0,len(dates)):
     try:
     # the code that can cause the error
-        loc = np.where(T_nordenday_c == dates[i])[0][0]
+        loc = np.where((T_nordenday_c == dates[i]) or (T_nordenday_c == (dates[i] -1 sec)))[0][0]
         T_c[i,0] = T_norden_c[loc]
     except IndexError: # catch the error
         continue
@@ -78,23 +81,30 @@ plt.plot(dates, T_c[:,0],'b.') #nordenskioldbreen
 plt.plot(dates, T_c[:,1],'g.') #ulvebreen
 plt.show()
 
-for i in range (0,len(dates)):
-    for j in range(0,2):
-        if np.isnan(T_c[i,j]):
-            T_c[i,j]=0
+#for i in range (0,len(dates)):
+#    for j in range(0,2):
+#        if np.isnan(T_c[i,j]):
+#            T_c[i,0]=0
+#            T_c[i,1]=0
+            
+T_mask = np.ma.masked_equal(T_c, np.nan)
+
+plt.plot(dates, T_mask[:,0],'b.') #nordenskioldbreen
+plt.plot(dates, T_mask[:,1],'g.') #ulvebreen
+plt.show()
 
 #%%
     
 '''maio method''' 
     
-#pca = PCA()
-#pc = pca.fit(T_c).transform(T_c)
-#exp_var = pca.explained_variance_ratio_
-#
-#proj = pca.components_
-#proj1 = proj[0,:]
-#proj2 = proj[1,:]
-#    
+pca = PCA()
+pc = pca.fit(T_c).transform(T_c)
+exp_var = pca.explained_variance_ratio_
+
+proj = pca.components_
+proj1 = proj[0,:]
+proj2 = proj[1,:]
+  
     
 '''DM method'''
 ulvNorm = T_c[:,1]/np.std(T_c[:,1])
