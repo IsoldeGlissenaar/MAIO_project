@@ -16,7 +16,7 @@ T_ulve=np.load(direc+"Ulvebreen/THUTavg[C].npy")
 T_ulveday=np.load(direc+"Ulvebreen/Date.npy")
 
 T_norden=np.load(direc+"Nordenskioldbreen/Tsurf.npy")
-T_nordenday=np.load(direc+"Nordenskioldbreen/Date.npy")
+T_nordenday=np.load(direc+"Nordenskioldbreen/tempnordendate.npy")
 
 T_luft=np.load(direc+"Lufthavn/TA.npy")
 T_luftday=np.load(direc+"Lufthavn2/Date.npy")
@@ -66,7 +66,7 @@ dates = np.arange('2015-08-22T17:00:00', '2016-12-03T17:00:00', dtype='datetime6
 #miss_nord = list(set(T_ulveday_c)-set(T_nordenday_c))
 
 T_c = np.empty([len(dates),2])
-T_c[:,:] = 999   
+T_c[:,:] = np.nan   
     
 
 for i in range(0,len(dates)):
@@ -109,17 +109,19 @@ plt.show()
 '''maio method''' 
     
 #pca = PCA()
-#pc = pca.fit(T_c).transform(T_c)
+#pc = pca.fit(T_mask).transform(T_mask)
 #exp_var = pca.explained_variance_ratio_
 #
 #proj = pca.components_
 #proj1 = proj[0,:]
 #proj2 = proj[1,:]
-  
+#  
     
 '''DM method'''
-ulvNorm = T_c[:,1]/np.std(T_c[:,1])
-nordNorm = T_c[:,0]/np.std(T_c[:,0])
+#temp = T_c[:,1]
+#ulvNorm = temp.__truediv__(np.ma.MaskedArray.std(temp))
+ulvNorm = T_mask[:,1]/np.std(T_mask[:,1])
+nordNorm = T_mask[:,0]/np.std(T_mask[:,0])
 
 
 mat = np.matrix([ulvNorm,nordNorm])
@@ -135,10 +137,10 @@ print('-------')
 
 
 
-regressie = np.polyfit(T_c[:,1],T_c[:,0],1)
+regressie = np.polyfit(T_mask[:,1],T_mask[:,0],1)
 tnao = np.arange(-25.,5.,1)
 
-plt.plot(T_c[:,1],T_c[:,0],'bo')        #plot NAO-index tegen Neerslag Servie
+plt.plot(T_mask[:,1],T_mask[:,0],'bo')        #plot NAO-index tegen Neerslag Servie
 plt.plot(tnao, tnao*regressie[0] + regressie[1],'r--')
 plt.xlabel('Nordenskioldbreen')
 plt.ylabel('Ulvebreen')
