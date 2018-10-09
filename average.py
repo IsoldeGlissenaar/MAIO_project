@@ -152,8 +152,137 @@ for number, name in enumerate(listnorden):
     plt.title('Nordenskioldbreen average '+name); plt.grid(True); plt.show()
     fig.savefig('Figures/nordenskioldbreen/avg_' + name)
 
+# =============================================================================
+#%% Lufthavn
+# =============================================================================
+listluft= ['DD','FF', 'PO','RR_12','RR_24','Stno','TA','TSS']
+dateu = np.load('Lufthavn2/Date.npy')
 
+days = 3459
 
+for number, name in enumerate(listluft):
+    T_surf = np.load('Lufthavn/'+name+'.npy')
+    store=[]
+    day=[]
+    td=np.timedelta64(1,'D')
+    start=np.datetime64('2009-03-25T00:00')
+    stop=start+td
+    year=2010
+    k=0
+    minvalue=3 #hoeveel niet nan data punten binnen 1 dag minimaal?
+    nonan=minvalue
+    
+    for i in range(days):
+        startindex=np.where(dateu==start)
+        stopindex=np.where(dateu==stop)
+        if k == 1:
+            for uur in range(int(stopyear[0]),int(stopindex[0])):
+                if m.isnan(T_surf[uur]): nonan=nonan-1
+            if nonan >= 0: 
+                x=np.nanmean(T_surf[int(stopyear[0]):int(stopindex[0])])  
+                store.append(x)
+                day.append(start) 
+            nonan=minvalue
+            year=year+1
+            k=0
+            
+        elif stop ==  np.datetime64(str(year)+'-01-01T00:00'):
+            stopyear=startindex[0]+48
+            for uur in range(int(startindex[0]),int(stopyear[0])):
+                if m.isnan(T_surf[uur]): nonan=nonan-1
+            if nonan >= 0: 
+                x=np.nanmean(T_surf[int(startindex[0]):int(stopyear[0])])
+                store.append(x)
+                day.append(start)
+            nonan=minvalue
+            k=1
+            
+        else:
+            for uur in range(int(startindex[0]),int(stopindex[0])):
+                if m.isnan(T_surf[uur]): nonan=nonan-1
+            if nonan >= 0:
+                x=np.nanmean(T_surf[int(startindex[0]):int(stopindex[0])])
+                store.append(x)
+                day.append(start)
+            nonan=minvalue
+    
+        stop=stop+td
+        start=start+td
+
+    np.save('avgLufthavn/'+name+'.npy', store)
+    np.save('avgLufthavn/'+name+'day.npy', day)
+    
+    fig=plt.figure(1, figsize=(11, 4))
+    plt.plot(day, store, '.', markersize= 5 ); 
+    plt.title('Lufthavn average '+name); plt.grid(True); plt.show()
+    fig.savefig('Figures/lufthavn/avg_' + name)
+    
+
+# =============================================================================
+#%% Isfjord
+# =============================================================================
+listisfjord= ['DD', 'FF', 'PO','RR_12','RR_24','Stno','TA','TSS']
+dateu = np.load('avgIsfjord/Date.npy')
+
+days = 1464
+
+for number, name in enumerate(listisfjord):
+    T_surf = np.load('Isfjord/'+name+'.npy')
+    store=[]
+    day=[]
+    td=np.timedelta64(1,'D')
+    start=np.datetime64('2014-09-10T00:00')
+    stop=start+td
+    year=2015
+    k=0
+    minvalue=3 #hoeveel niet nan data punten binnen 1 dag minimaal?
+    nonan=minvalue
+    
+    for i in range(days):
+        startindex=np.where(dateu==start)
+        stopindex=np.where(dateu==stop)
+        if k == 1:
+            for uur in range(int(stopyear[0]),int(stopindex[0])):
+                if m.isnan(T_surf[uur]): nonan=nonan-1
+            if nonan >= 0: 
+                x=np.nanmean(T_surf[int(stopyear[0]):int(stopindex[0])])  
+                store.append(x)
+                day.append(start) 
+            nonan=minvalue
+            year=year+1
+            k=0
+            
+        elif stop ==  np.datetime64(str(year)+'-01-01T00:00'):
+            stopyear=startindex[0]+48
+            for uur in range(int(startindex[0]),int(stopyear[0])):
+                if m.isnan(T_surf[uur]): nonan=nonan-1
+            if nonan >= 0: 
+                x=np.nanmean(T_surf[int(startindex[0]):int(stopyear[0])])
+                store.append(x)
+                day.append(start)
+            nonan=minvalue
+            k=1
+            
+        else:
+            for uur in range(int(startindex[0]),int(stopindex[0])):
+                if m.isnan(T_surf[uur]): nonan=nonan-1
+            if nonan >= 0:
+                x=np.nanmean(T_surf[int(startindex[0]):int(stopindex[0])])
+                store.append(x)
+                day.append(start)
+            nonan=minvalue
+    
+        stop=stop+td
+        start=start+td
+        
+    np.save('avgIsfjord/'+name+'.npy', store)
+    np.save('avgIsfjord/'+name+'day.npy', day)
+    
+    fig=plt.figure(1, figsize=(11, 4))
+    plt.plot(day, store, '.', markersize= 5 ); 
+    plt.title('Isfjord average '+name); plt.grid(True); plt.show()
+    fig.savefig('Figures/isfjord/avg_' + name)
+    
 
 
 
