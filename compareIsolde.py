@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 import datetime
 
-direc = "C:/Users/Isolde/Documents/GitHub/MAIO_project/"
+direc = ""
 
 T_ulve=np.load(direc+"Ulvebreen/THUTavg[C].npy")
 T_ulveday=np.load(direc+"Ulvebreen/Date.npy")
