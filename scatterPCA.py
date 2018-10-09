@@ -58,6 +58,7 @@ x1=dates
 x2=dates
 
 ### Plot data
+'''
 fig=plt.figure('Average Daily Precipitation per Month', figsize=(10,5))
 plt.plot(x1, y1, label=city1)
 plt.scatter(x1, y1, s=20, color='red', marker=u'o') 
@@ -68,7 +69,7 @@ plt.title('Average Daily Precipitation per Month') # Title at top of plot
 plt.xlabel('time [years]') # label along x-axes
 plt.ylabel('Total Precipitation [mm of water]') # label along x-axes
 plt.grid(True); plt.show() # show plot on screen
-
+'''
 title="test"
 xtitle=city1
 ytitle=city2

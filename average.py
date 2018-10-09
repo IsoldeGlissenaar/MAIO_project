@@ -156,7 +156,7 @@ for number, name in enumerate(listnorden):
 #%% Lufthavn
 # =============================================================================
 listluft= ['DD','FF', 'PO','RR_12','RR_24','Stno','TA','TSS']
-dateu = np.load('Lufthavn2/Date.npy')
+datel = np.load('avgLufthavn/Date.npy')
 
 days = 3459
 
@@ -173,8 +173,8 @@ for number, name in enumerate(listluft):
     nonan=minvalue
     
     for i in range(days):
-        startindex=np.where(dateu==start)
-        stopindex=np.where(dateu==stop)
+        startindex=np.where(datel==start)
+        stopindex=np.where(datel==stop)
         if k == 1:
             for uur in range(int(stopyear[0]),int(stopindex[0])):
                 if m.isnan(T_surf[uur]): nonan=nonan-1
@@ -222,7 +222,7 @@ for number, name in enumerate(listluft):
 #%% Isfjord
 # =============================================================================
 listisfjord= ['DD', 'FF', 'PO','RR_12','RR_24','Stno','TA','TSS']
-dateu = np.load('avgIsfjord/Date.npy')
+datei = np.load('avgIsfjord/Date.npy')
 
 days = 1464
 
@@ -239,8 +239,9 @@ for number, name in enumerate(listisfjord):
     nonan=minvalue
     
     for i in range(days):
-        startindex=np.where(dateu==start)
-        stopindex=np.where(dateu==stop)
+        print(i)
+        startindex=np.where(datei==start)
+        stopindex=np.where(datei==stop)
         if k == 1:
             for uur in range(int(stopyear[0]),int(stopindex[0])):
                 if m.isnan(T_surf[uur]): nonan=nonan-1
