@@ -4,13 +4,15 @@ Created on Tue Oct  2 09:30:22 2018
 
 @author: Isolde Glissenaar
 
-This script 
+This script opens the daily mean values of the 2m temperature in degrees C for the
+Ulvebreen, Nordenskioldbreen and Svalbard Lufthavn. The data is then cut to the overlapping
+length (where all three of them have measurements). In the next block the arrays are put
+together and the dates with nan values are deleted.
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
-import pandas as pd
+
 
 direc = ""
 
@@ -61,15 +63,14 @@ plt.show()
 
 
 #%%
-'''INCLUDE DATES THAT WERE SKIPPED IN THE MEASUREMENTS
+'''
+INCLUDE DATES THAT WERE SKIPPED IN THE MEASUREMENTS
 This part of the code creates an array with values for the nordenskiold
 and the ulvebreen for every half hour, even when there were no measurements for both.
-When there is no value, this is masked.'''
+When there is no value, this is masked or cut.
+'''
 
-dates = np.arange('2015-08-26T00:00:00', '2016-07-11T00:00:00', dtype='datetime64[1D]')
-
-#miss_ulv = list(set(T_nordenday_c)-set(T_ulveday_c))
-#miss_nord = list(set(T_ulveday_c)-set(T_nordenday_c))
+dates = np.arange(minday, maxday, dtype='datetime64[1D]')
 
 T_c = np.empty([len(dates),3])
 T_c[:,:] = np.nan   
@@ -105,9 +106,9 @@ plt.plot(dates, T_c[:,1],'g.') #ulvebreen
 plt.plot(dates, T_c[:,2],'y.') #lufthavn
 plt.show()
 
-
-T_nomask = np.zeros((272,3))
-nomask_dates = np.empty(shape=(272), dtype='datetime64[D]')
+days = 272      # number of days with data (for other data find this by making list + append)
+T_nomask = np.zeros((days,3))
+nomask_dates = np.empty(shape=(days), dtype='datetime64[D]')
 count = 0
 
 for i in range (0,len(dates)):
@@ -131,11 +132,23 @@ plt.plot(nomask_dates, T_nomask[:,1],'g.') #ulvebreen
 plt.plot(nomask_dates, T_nomask[:,2],'y.') #lufthavn
 plt.show()
 
-'''T_nomask is an array with the data for overlapping dates. nomask_dates is the companionaning
+'''
+T_nomask is an array with the data for overlapping dates. nomask_dates is the companionaning
 time array. First column: Nordenskioldbreen, second column: Ulvebreen, third column:
 Svalbard Lufthavn.
 T_mask is the array where the dates with no data are masked. dates is the companionaning time 
-array.'''
+array.
+'''
+
+
+
+
+
+
+
+
+
+
 
 #%%
 
@@ -151,48 +164,51 @@ array.'''
 #proj1 = proj[0,:]
 #proj2 = proj[1,:]
 #  
-    
-'''DM method'''
-ulvNorm = T_mask[:,1]/np.std(T_mask[:,1])
-nordNorm = T_mask[:,0]/np.std(T_mask[:,0])
-
-
-mat = np.ma.array([ulvNorm,nordNorm])
-Covmatrix = np.ma.cov(mat)#/np.ma.cov(mat)[1,1]
-eig = np.linalg.eig(Covmatrix)
-print(eig)
-print('-------')
-print(Covmatrix)
-print('-------')
-print(np.corrcoef(ulvNorm, nordNorm), 'ulven vs norden')        #Geeft Correlatiecoefficiënten
-print('-------')
-
-
-
-
-regressie = np.polyfit(T_mask[:,1],T_mask[:,0],1)
-tnao = np.arange(-25.,5.,1)
-
-plt.plot(T_mask[:,1],T_mask[:,0],'bo')        #plot NAO-index tegen Neerslag Servie
-plt.plot(tnao, tnao*regressie[0] + regressie[1],'r--')
-plt.xlabel('Nordenskioldbreen')
-plt.ylabel('Ulvebreen')
-#plt.title('NAO-index versus Madrid precipitation')
-#plt.text(0.75, 0.26, 'r = -0.72', fontsize=14, color='black')
-#plt.text(0.75, 0.235, 's = -0.05', fontsize=14, color='black')
-#plt.savefig("NaoMadrid.png",dpi=300)
-plt.show()  
-
-
-projectiematrix = np.transpose(np.dot(np.matrix.transpose(mat),(np.linalg.eig(Covmatrix)[1]))) #Projecteert de data op de eigenvectoren
-princ1 = (projectiematrix[0].getA1()-np.mean(projectiematrix[0].getA1()))
-princ2 = (projectiematrix[1].getA1()-np.mean(projectiematrix[1].getA1()))
-
-
-
-plt.plot(dates, princ1,"bo", label = 'First PC', color = "blue")           #Plot de principal components
-plt.plot(dates, princ2,"bo", label = 'Second PC', color = "green")
-plt.xlabel('Years')
-plt.ylabel('Amplitude of principal component')
-plt.legend(numpoints=1,prop={'size':11},loc=3)
-plt.show()
+#    
+#'''DM method'''
+#    
+#from sklearn.decomposition import PCA
+#import pandas as pd
+#ulvNorm = T_nomask[:,1]/np.std(T_nomask[:,1])
+#nordNorm = T_nomask[:,0]/np.std(T_nomask[:,0])
+#
+#
+#mat = np.array([ulvNorm,nordNorm])
+#Covmatrix = np.cov(mat)#/np.ma.cov(mat)[1,1]
+#eig = np.linalg.eig(Covmatrix)
+#print(eig)
+#print('-------')
+#print(Covmatrix)
+#print('-------')
+#print(np.corrcoef(ulvNorm, nordNorm), 'ulven vs norden')        #Geeft Correlatiecoefficiënten
+#print('-------')
+#
+#
+#
+#
+#regressie = np.polyfit(T_nomask[:,1],T_nomask[:,0],1)
+#tnao = np.arange(-25.,5.,1)
+#
+#plt.plot(T_nomask[:,1],T_nomask[:,0],'bo')        #plot NAO-index tegen Neerslag Servie
+#plt.plot(tnao, tnao*regressie[0] + regressie[1],'r--')
+#plt.xlabel('Nordenskioldbreen')
+#plt.ylabel('Ulvebreen')
+##plt.title('NAO-index versus Madrid precipitation')
+##plt.text(0.75, 0.26, 'r = -0.72', fontsize=14, color='black')
+##plt.text(0.75, 0.235, 's = -0.05', fontsize=14, color='black')
+##plt.savefig("NaoMadrid.png",dpi=300)
+#plt.show()  
+#
+#
+#projectiematrix = np.transpose(np.dot(np.matrix.transpose(mat),(np.linalg.eig(Covmatrix)[1]))) #Projecteert de data op de eigenvectoren
+#princ1 = (projectiematrix[0].getA1()-np.mean(projectiematrix[0].getA1()))
+#princ2 = (projectiematrix[1].getA1()-np.mean(projectiematrix[1].getA1()))
+#
+#
+#
+#plt.plot(dates, princ1,"bo", label = 'First PC', color = "blue")           #Plot de principal components
+#plt.plot(dates, princ2,"bo", label = 'Second PC', color = "green")
+#plt.xlabel('Years')
+#plt.ylabel('Amplitude of principal component')
+#plt.legend(numpoints=1,prop={'size':11},loc=3)
+#plt.show()

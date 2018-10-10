@@ -3,6 +3,11 @@
 Created on Thu Sep 20 16:36:10 2018
 
 @author: Isolde Glissenaar
+
+
+This script opens the raw data from textfile and saves it as numpy array files.
+This is done for the Ulvebreen, the Nordenskioldbreen, Svalbard Lufthavn and 
+Isfjord radio.
 """
 
 #import modules
@@ -11,7 +16,7 @@ import matplotlib.pyplot as plt
 
 
 #Open files
-f = open( "aws_ulvebreen.txt" )
+f = open( "Ulvebreen/aws_ulvebreen.txt" )
 
 ulve = []
 for line in f.readlines():
@@ -21,7 +26,7 @@ for line in f.readlines():
 f.close()
 
 
-f = open( "aws_nordenskioldbreen.txt" )
+f = open( "Nordenskioldbreen/aws_nordenskioldbreen.txt" )
 
 norden = []
 for line in f.readlines():
@@ -31,7 +36,7 @@ for line in f.readlines():
 f.close()
 
 
-f = open("lufthavn_data.txt")
+f = open("Lufthavn/lufthavn_data.txt")
 
 lufthavn = []
 for line in f.readlines():
@@ -43,7 +48,7 @@ f.close()
 lufthavn = lufthavn[23:][:]
 
 
-f = open("isfjord_data.txt")
+f = open("Isfjord/isfjord_data.txt")
 
 isfjord = []
 for line in f.readlines():

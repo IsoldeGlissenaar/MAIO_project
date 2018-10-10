@@ -3,6 +3,8 @@
 Created on Tue Oct  2 11:22:32 2018
 
 @author: d-vz
+
+Combines day, month, year arrays to datetime64 for Lufthavn and Isfjord Radio
 """
 import numpy as np
 import matplotlib.pyplot as plt
