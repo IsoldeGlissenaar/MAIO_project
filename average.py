@@ -9,6 +9,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math as m
 
+'''
+For each source: (Ulvebreen, Nordenskioldbreen, Lufthavn, Isfjord)
+Input: "raw" .npy data
+Calculating average values per day if less than x nan-values and corresponding dates.
+To go through a new year, "startindex" or "stopindex" needs to be changed.
+Output: save as .npy file 
+'''
+
 # =============================================================================
 #%% Ulvebreen
 # =============================================================================

@@ -4,8 +4,11 @@ import datetime, os, glob, fnmatch, sys, itertools, netCDF4, pickle, time, warni
 from matplotlib.ticker import NullFormatter
 from scipy.stats.stats import pearsonr, spearmanr
 from mpl_toolkits.axes_grid.anchored_artists import AnchoredText
+import numpy as np
+from scipy import linalg as LA
 
-def scatterplot(title, x,xtitle,y,ytitle, xlim1, xlim2, ylim1, ylim2, binsx=10, binsy=10):
+
+def scatterplot(x,xtitle,y,ytitle, xlim1, xlim2, ylim1, ylim2, binsx=10, binsy=10):
     nullfmt = NullFormatter()         # no labels    
     # definitions for the axes
     left, width = 0.1, 0.65
@@ -37,41 +40,67 @@ def scatterplot(title, x,xtitle,y,ytitle, xlim1, xlim2, ylim1, ylim2, binsx=10, 
     axHistx.set_xlim(axScatter.get_xlim())
     axHisty.set_ylim(axScatter.get_ylim())
     pears=pearsonr(x,y)
-    #pears=spearmanr(x,y)
+    corrcoef=np.corrcoef(x,y)
+    polyfit=np.polyfit(x,y,1)
+    print(pears)
+    print(polyfit) 
+    print(corrcoef)
     c=np.linspace(-lim,lim,360)
-    d=pears[0]*c+pears[1]
+    d=polyfit[0]*c+polyfit[1]
     axScatter.plot(c,d, color='black', lw=3)
-    print(c,d)
-    at = AnchoredText(('y='+str(pears[0])+'*x+'+str(pears[1])),
-                      prop=dict(size=10), frameon=True, loc=2 )
-    at.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
-    axScatter.add_artist(at)
+    #at = AnchoredText(('y='+str(pears[0])+'*x+'+str(pears[1])), prop=dict(size=10), frameon=True, loc=2 )
+    #at.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
+    #axScatter.add_artist(at)
 
-    return fig
+    return fig, polyfit[0]
     
-city1="ulvebreen"
-city2="nordenskioldbreen"
-### Create data
-y1=T_c[:,0]
-y2=T_c[:,1]
+xtitle="Ulvebreen"
+ytitle="Nordenskioldbreen"
+y1=T_mask[:,0]
+y2=T_mask[:,1]
 x1=dates
 x2=dates
-
-### Plot data
-'''
-fig=plt.figure('Average Daily Precipitation per Month', figsize=(10,5))
-plt.plot(x1, y1, label=city1)
-plt.scatter(x1, y1, s=20, color='red', marker=u'o') 
-plt.plot(x2, y2, label=city2)
-plt.scatter(x2, y2, s=20, color='red', marker=u'o') 
-plt.legend()
-plt.title('Average Daily Precipitation per Month') # Title at top of plot
-plt.xlabel('time [years]') # label along x-axes
-plt.ylabel('Total Precipitation [mm of water]') # label along x-axes
-plt.grid(True); plt.show() # show plot on screen
-'''
-title="test"
-xtitle=city1
-ytitle=city2
-fig2 = scatterplot(title, y1, xtitle, y2, ytitle, xlim1=np.min(y1) ,xlim2=np.max(y1) ,ylim1=np.min(y2) ,ylim2=np.max(y2), binsx=20, binsy=20)
+fig2, s1 = scatterplot(y1, xtitle, y2, ytitle, xlim1=np.min(y1) ,xlim2=np.max(y1) ,ylim1=np.min(y2) ,ylim2=np.max(y2), binsx=20, binsy=20)
 plt.show()
+
+xtitle="Ulvebreen"
+ytitle="Lufthavn"
+y1=T_mask[:,0]
+y2=T_mask[:,1]
+x1=dates
+x2=dates
+fig2, s2 = scatterplot(y1, xtitle, y2, ytitle, xlim1=np.min(y1) ,xlim2=np.max(y1) ,ylim1=np.min(y2) ,ylim2=np.max(y2), binsx=20, binsy=20)
+plt.show()
+
+xtitle="Lufthavn"
+ytitle="Nordenskioldbreen"
+y1=T_mask[:,0]
+y2=T_mask[:,1]
+x1=dates
+x2=dates
+fig2, s3 = scatterplot(y1, xtitle, y2, ytitle, xlim1=np.min(y1) ,xlim2=np.max(y1) ,ylim1=np.min(y2) ,ylim2=np.max(y2), binsx=20, binsy=20)
+plt.show()
+
+matrix = np.array([[1,s1,s2],
+                   [s1,1,s3],
+                   [s2,s3,1]])
+    
+print(matrix)
+e_vals, e_vecs = LA.eig(matrix)
+print("eigenvalues: ",e_vals)
+print("Eigenvalue 1 = ", max(e_vals.real))
+print("Eigenvalue 2 = ", np.median(e_vals.real))
+print("Eigenvalue 3 = ", min(e_vals.real))
+print("Variance of total data:")
+print("Eigenvalue 1 = ", max(e_vals.real)/3*100)
+print("Eigenvalue 2 = ", np.median(e_vals.real)/3*100)
+print("Eigenvalue 3 = ", min(e_vals.real)/3*100)
+print("eigenvectors: ",e_vecs)
+
+print("number 1:", e_vecs[0,0], e_vecs[1,0], e_vecs[2,0])
+print("number 2:", e_vecs[0,1], e_vecs[1,1], e_vecs[2,1])
+print("number 3:", e_vecs[0,2], e_vecs[1,2], e_vecs[2,2])
+
+
+
+
