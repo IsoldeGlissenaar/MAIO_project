@@ -15,15 +15,18 @@ import matplotlib.pyplot as plt
 
 
 direc = ""
+data_ulve = "HWDavg[deg]" 
+data_norden = "WD"
+data_luft = "DD"
 
-T_ulve=np.load(direc+"avgUlvebreen/HWSavg[m_s].npy")
-T_ulveday=np.load(direc+"avgUlvebreen/HWSavg[m_s]day.npy")
+T_ulve=np.load(direc+"avgUlvebreen/"+data_ulve+".npy")
+T_ulveday=np.load(direc+"avgUlvebreen/"+data_ulve+"day.npy")
 
-T_norden=np.load(direc+"avgNordenskioldbreen/WS.npy")
-T_nordenday=np.load(direc+"avgNordenskioldbreen/WSday.npy")
+T_norden=np.load(direc+"avgNordenskioldbreen/"+data_norden+".npy")
+T_nordenday=np.load(direc+"avgNordenskioldbreen/"+data_norden+"day.npy")
 
-T_luft=np.load(direc+"avgLufthavn/FF.npy")
-T_luftday=np.load(direc+"avgLufthavn/FFDay.npy")
+T_luft=np.load(direc+"avgLufthavn/"+data_luft+".npy")
+T_luftday=np.load(direc+"avgLufthavn/"+data_luft+"Day.npy")
 
 
 ''' This code cuts the data to the overlapping length'''
