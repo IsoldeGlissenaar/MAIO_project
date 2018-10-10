@@ -2,7 +2,9 @@
 """
 Created on Tue Oct  2 09:30:22 2018
 
-@author: Isolde
+@author: Isolde Glissenaar
+
+This script 
 """
 
 import numpy as np
@@ -64,7 +66,7 @@ This part of the code creates an array with values for the nordenskiold
 and the ulvebreen for every half hour, even when there were no measurements for both.
 When there is no value, this is masked.'''
 
-dates = np.arange('2015-08-26T00:00:00', '2016-07-11T00:00:00', dtype='datetime64[30m]')
+dates = np.arange('2015-08-26T00:00:00', '2016-07-11T00:00:00', dtype='datetime64[1D]')
 
 #miss_ulv = list(set(T_nordenday_c)-set(T_ulveday_c))
 #miss_nord = list(set(T_ulveday_c)-set(T_nordenday_c))
@@ -103,19 +105,37 @@ plt.plot(dates, T_c[:,1],'g.') #ulvebreen
 plt.plot(dates, T_c[:,2],'y.') #lufthavn
 plt.show()
 
-for i in range (0,len(dates)):
-    for j in range(0,2):
-        if np.isnan(T_c[i,j]):
-            T_c[i,0]=999
-            T_c[i,1]=999
-            T_c[i,2]=999
-            
-T_mask = np.ma.masked_equal(T_c, 999)
 
-plt.plot(dates, T_mask[:,0],'b.') #nordenskioldbreen
-plt.plot(dates, T_mask[:,1],'g.') #ulvebreen
-plt.plot(dates, T_mask[:,2],'y.') #lufthavn
+T_nomask = np.zeros((272,3))
+nomask_dates = np.empty(shape=(272), dtype='datetime64[D]')
+count = 0
+
+for i in range (0,len(dates)):
+    if np.isnan(T_c[i,0]) or np.isnan(T_c[i,1]) or np.isnan(T_c[i,2]):
+        temp=1
+    else:
+        T_nomask[count,:] = (T_c[i,:])
+        nomask_dates[count] = dates[i]
+        count = count+1
+
+#for i in range (0,len(dates)):
+#    for j in range(0,3):            
+#            T_c[i,0]=999
+#            T_c[i,1]=999
+#            T_c[i,2]=999
+            
+#T_mask = np.ma.masked_equal(T_c, 999)
+
+plt.plot(nomask_dates, T_nomask[:,0],'b.') #nordenskioldbreen
+plt.plot(nomask_dates, T_nomask[:,1],'g.') #ulvebreen
+plt.plot(nomask_dates, T_nomask[:,2],'y.') #lufthavn
 plt.show()
+
+'''T_nomask is an array with the data for overlapping dates. nomask_dates is the companionaning
+time array. First column: Nordenskioldbreen, second column: Ulvebreen, third column:
+Svalbard Lufthavn.
+T_mask is the array where the dates with no data are masked. dates is the companionaning time 
+array.'''
 
 #%%
 
