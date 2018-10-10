@@ -7,7 +7,11 @@ Created on Mon Oct  1 10:27:23 2018
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+'''
+For Raw data or Average data:
+Input: .npy files and defined variables in list for different sources.
+Output: Plot of to compare different sources with corresponding variables
+'''
 
 # =============================================================================
 #%% Raw data
