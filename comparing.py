@@ -13,16 +13,13 @@ Input: .npy files and defined variables in list for different sources.
 Output: Plot of to compare different sources with corresponding variables
 '''
 
-listnorden=['T2m', "WD", "WS","WSm", 'T2m', 'RH',]
-listulven= ['THUT2m[K]', 'HWDavg[deg]', "HWSavg[m_s]", "HWSmax[m_s]",'THUT2m[K]', 'RHWavg[%]', ]
-listluft=['TA', 'DD', "FF", ]
+listnorden= ['T2m',      "WD",          "WS",          "P", "WSm",  'RH',]
+listulven=  ['THUT2m[K]','HWDavg[deg]', "HWSavg[m_s]", "BAP[hPa]",  "HWSmax[m_s]", 'RHWavg[%]', ]
+listluft=   ['TA',       'DD',          "FF",          "PO"]
 
 # =============================================================================
 #%% Raw data
 # =============================================================================
-listnorden=['Tsurf', "WD", "WS","WSm", 'T2m', 'RH',]
-listulven= ['TSURF[C]','HWDavg[deg]', "HWSavg[m_s]", "HWSmax[m_s]",'THUT2m[K]', 'RHWavg[%]', ]
-listluft=['TA', 'DD', "FF", ]
 
 dateu=np.load("Ulvebreen/Date.npy")
 ulve={}
@@ -55,10 +52,6 @@ for l in range(k+1):
 # =============================================================================
 #%%  average   
 # =============================================================================
-listnorden=['Tsurf', "WD", "WS","WSm", 'T2m', 'RH',]
-listulven= ['TSURF[C]','HWDavg[deg]', "HWSavg[m_s]", "HWSmax[m_s]",'THUT2m[K]', 'RHWavg[%]', ]
-listluft=['TA', 'DD', "FF", ]
-
 ulve={}
 for k, i in enumerate(listulven):
         ulve["{0}".format(i)]=np.load("avgUlvebreen/"+i+".npy")   

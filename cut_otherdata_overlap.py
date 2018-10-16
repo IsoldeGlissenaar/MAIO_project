@@ -13,11 +13,10 @@ together and the dates with nan values are deleted.
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 direc = ""
-data_ulve = "HWDavg[deg]" 
-data_norden = "WD"
-data_luft = "DD"
+data_ulve = "BAP[hPa]" 
+data_norden = "P"
+data_luft = "PO"
 
 T_ulve=np.load(direc+"avgUlvebreen/"+data_ulve+".npy")
 T_ulveday=np.load(direc+"avgUlvebreen/"+data_ulve+"day.npy")
