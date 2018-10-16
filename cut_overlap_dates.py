@@ -141,7 +141,13 @@ array.
 '''
 
 
+#%%
 
+plt.plot(T_nomask[:,1],T_nomask[:,0],'.')
+plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0])
+plt.xlabel('Temperature Ulvebreen')
+plt.ylabel('Temperature Nordenskioldbreen')
+plt.show()
 
 
 
