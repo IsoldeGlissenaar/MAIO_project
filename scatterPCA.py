@@ -65,10 +65,10 @@ def scatterplot(direc, x,xtitle,y,ytitle, xlim1=-25, xlim2=10, ylim1=-25, ylim2=
 
     return fig, corrcoef[0][1]
 
-direc='Figures/compare/WD_Scat_'
+direc='Figures/compare/P_Scat_'
 ''' Data from compareIsolde '''
 
-variable = " winddirection [degrees]"
+variable = " Pressure [hPa]"
 xtitle="Ulvebreen"
 ytitle="Nordenskioldbreen"
 y1=T_nomask[:,1]
