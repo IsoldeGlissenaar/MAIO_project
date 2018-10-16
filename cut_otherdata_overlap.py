@@ -14,9 +14,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 direc = ""
-data_ulve = "BAP[hPa]" 
-data_norden = "P"
-data_luft = "PO"
+data_ulve = "TSURF[C]" 
+data_norden = "T"
+data_luft = "TSS"
 
 T_ulve=np.load(direc+"avgUlvebreen/"+data_ulve+".npy")
 T_ulveday=np.load(direc+"avgUlvebreen/"+data_ulve+"day.npy")
@@ -24,15 +24,15 @@ T_ulveday=np.load(direc+"avgUlvebreen/"+data_ulve+"day.npy")
 T_norden=np.load(direc+"avgNordenskioldbreen/"+data_norden+".npy")
 T_nordenday=np.load(direc+"avgNordenskioldbreen/"+data_norden+"day.npy")
 
-T_luft=np.load(direc+"avgLufthavn/"+data_luft+".npy")
-T_luftday=np.load(direc+"avgLufthavn/"+data_luft+"Day.npy")
+#T_luft=np.load(direc+"avgLufthavn/"+data_luft+".npy")
+#T_luftday=np.load(direc+"avgLufthavn/"+data_luft+"Day.npy")
 
 
 ''' This code cuts the data to the overlapping length'''
 
 plt.plot(T_ulveday,T_ulve,'g.')
 plt.plot(T_nordenday,T_norden,'b.')
-plt.plot(T_luftday,T_luft,'y.')
+#plt.plot(T_luftday,T_luft,'y.')
 plt.show()
 
 minday = T_ulveday[1]
@@ -45,8 +45,8 @@ maxnord  = np.where(T_nordenday   == maxday)[0][0]
 minulv  = np.where(T_ulveday   == minday)[0][0]
 maxulv  = np.where(T_ulveday   == maxday)[0][0]
 
-minluft = np.where(T_luftday   == minday)[0][0]
-maxluft = np.where(T_luftday   == maxday)[0][0]
+#minluft = np.where(T_luftday   == minday)[0][0]
+#maxluft = np.where(T_luftday   == maxday)[0][0]
 
 
 T_ulve_c =  T_ulve[minulv:maxulv]
@@ -55,8 +55,8 @@ T_ulveday_c = T_ulveday[minulv:maxulv]
 T_norden_c =  T_norden[minnord:maxnord]
 T_nordenday_c = T_nordenday[minnord:maxnord]
 
-T_luft_c = T_luft[minluft:maxluft]
-T_luftday_c = T_luftday[minluft:maxluft]
+#T_luft_c = T_luft[minluft:maxluft]
+#T_luftday_c = T_luftday[minluft:maxluft]
 
 #plt.plot(T_nordenday_c,T_norden_c,'b.')
 #plt.plot(T_ulveday_c,T_ulve_c,'g.')
@@ -94,13 +94,13 @@ for i in range(0,len(dates)):
     except IndexError: # catch the error
         continue
     
-for i in range(0,len(dates)):
-    try:
-    # the code that can cause the error
-        loc_luft  = np.where(T_luftday_c == dates[i])[0][0]
-        T_c[i,2] = T_luft_c[loc_luft]
-    except IndexError: # catch the error
-        continue
+#for i in range(0,len(dates)):
+#    try:
+#    # the code that can cause the error
+#        loc_luft  = np.where(T_luftday_c == dates[i])[0][0]
+#        T_c[i,2] = T_luft_c[loc_luft]
+#    except IndexError: # catch the error
+#        continue
 
 
 #plt.plot(dates, T_c[:,0],'b.') #nordenskioldbreen
@@ -112,7 +112,7 @@ for i in range(0,len(dates)):
 #check how many days with data
 nomask_dates = []
 for i in range (0,len(dates)):
-    if np.isnan(T_c[i,0]) or np.isnan(T_c[i,1]) or np.isnan(T_c[i,2]):
+    if np.isnan(T_c[i,0]) or np.isnan(T_c[i,1]):# or np.isnan(T_c[i,2]):
         temp=1
     else:
         nomask_dates.append(dates[i])
@@ -125,7 +125,7 @@ nomask_dates = np.empty(shape=(days), dtype='datetime64[D]')
 count = 0
 
 for i in range (0,len(dates)):
-    if np.isnan(T_c[i,0]) or np.isnan(T_c[i,1]) or np.isnan(T_c[i,2]):
+    if np.isnan(T_c[i,0]) or np.isnan(T_c[i,1]):# or np.isnan(T_c[i,2]):
         temp=1
     else:
         T_nomask[count,:] = (T_c[i,:])
@@ -155,7 +155,10 @@ array.
 
 
 
-
+plt.plot(T_nomask[:,1], T_nomask[:,0],'.')
+plt.xlabel('ulve')
+plt.ylabel('norden')
+plt.show()
 
 
 

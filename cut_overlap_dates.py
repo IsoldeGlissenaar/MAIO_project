@@ -143,15 +143,18 @@ array.
 
 #%%
 
-plt.plot(T_nomask[:,1],T_nomask[:,0],'.')
-plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0])
-plt.xlabel('Temperature Ulvebreen')
-plt.ylabel('Temperature Nordenskioldbreen')
+plt.plot(nomask_dates, T_nomask[:,1]-(T_nomask[:,0]+2.334), 'g.')
+plt.plot(nomask_dates, np.zeros(len(nomask_dates)))
+#plt.plot(nomask_dates, T_nomask[:,0]+2.334, 'b.')
 plt.show()
+print (np.mean(T_nomask[:,1]-(T_nomask[:,0]+2.334)), ' degrees Celsius colder in Ulvebreen',
+       'than expected from lapse rate')
 
-
-
-
+#plt.scatter(T_nomask[:,1],T_nomask[:,0])
+#plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0])
+#plt.xlabel('Temperature Ulvebreen')
+#plt.ylabel('Temperature Nordenskioldbreen')
+#plt.show()
 
 
 
