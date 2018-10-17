@@ -143,10 +143,23 @@ array.
 
 #%%
 
-plt.plot(nomask_dates, T_nomask[:,1]-(T_nomask[:,0]+2.334), 'g.')
-plt.plot(nomask_dates, np.zeros(len(nomask_dates)))
-#plt.plot(nomask_dates, T_nomask[:,0]+2.334, 'b.')
+
+plt.plot(nomask_dates, T_nomask[:,0],'b.', label='Nordenskioldbreen')
+plt.plot(nomask_dates, T_nomask[:,1],  'g.',label='Ulvebreen')
+plt.ylabel('Temperature [$^\circ$C]')
+plt.xticks(rotation=45)
+plt.legend(bbox_to_anchor=(1.0,0.5), loc="center left")
+plt.grid(linestyle='dotted')
+plt.title('T2m [$^\circ$C]')
+plt.xlim([np.datetime64('2015-08-01'),np.datetime64('2016-08-01') ])
+plt.savefig('Figures/T2m/Tall.png', bbox_inches="tight", dpi=500)
 plt.show()
+
+#%%
+#plt.plot(nomask_dates, T_nomask[:,1]-(T_nomask[:,0]+2.334), 'g.')
+#plt.plot(nomask_dates, np.zeros(len(nomask_dates)))
+#plt.show()
+
 print (np.mean(T_nomask[:,1]-(T_nomask[:,0]+2.334)), ' degrees Celsius colder in Ulvebreen',
        'than expected from lapse rate')
 
@@ -156,8 +169,19 @@ print (np.mean(T_nomask[:,1]-(T_nomask[:,0]+2.334)), ' degrees Celsius colder in
 #plt.ylabel('Temperature Nordenskioldbreen')
 #plt.show()
 
+std_nord = np.std(T_nomask[:,0]+2.334)
+std_ulv  = np.std(T_nomask[:,1])
+av_nord  = np.mean(T_nomask[:,0]+2.334)
+av_ulv   = np.mean(T_nomask[:,1])
 
+var = np.sqrt((std_ulv)**2/272+(std_nord)**2/272)
+t = (av_ulv-av_nord)/var
+vrijdheidsgraad = 272+272 -2
 
+import scipy.stats
+a = T_nomask[:,0]+2.334
+b = T_nomask[:,1]
+p = scipy.stats.ttest_ind(a,b)
 
 #%%
 

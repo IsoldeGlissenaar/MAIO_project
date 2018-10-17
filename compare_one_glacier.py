@@ -22,8 +22,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 direc = ""
-data_1 = "THUT2m[K]" 
-data_2 = "NRLavg[W_m2]"
+data_1 = "ADW[m]" 
+data_2 = "SSH[m]"
 
 T_ulve=np.load(direc+"avgUlvebreen/"+data_1+".npy")
 T_ulveday=np.load(direc+"avgUlvebreen/"+data_1+"day.npy")
@@ -36,9 +36,10 @@ T_nordenday=np.load(direc+"avgUlvebreen/"+data_2+"day.npy")
 
 plt.plot(T_ulveday,T_ulve,'g.')
 plt.plot(T_nordenday,T_norden,'b.')
+
 plt.show()
 
-minday = T_ulveday[1]
+minday = T_ulveday[7]
 maxday = np.max(T_nordenday)
 
 
