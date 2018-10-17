@@ -42,7 +42,7 @@ rvb = make_colormap([c('red'), c('violet'),
                      0.08, c('violet'), c('blue'), 
                      0.37, c('blue'), c('violet'), 
                      0.65, c('violet'), c('red') ])
-N=443
+N=272
 array_dg = np.linspace(0, 10, N)
 colors = np.linspace(0,N,N)
 plt.scatter(T_nomask[:,1],T_nomask[:,0], c=colors, cmap=rvb)
