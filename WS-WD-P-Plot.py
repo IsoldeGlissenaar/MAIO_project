@@ -56,41 +56,70 @@ plt.ylim(0,32)
 plt.title('Nordenskioldbreen')
 plt.grid()
 plt.show()
-fig.savefig('Figures/compare/WD-WS-PR-Nordenskioldbreen.png')
+#fig.savefig('Figures/compare/WD-WS-PR-Nordenskioldbreen.png')
 
 # =============================================================================
-#%% Ulvebreen
+#%% Nordenskioldbreen
 # =============================================================================
+
 fig=plt.figure()
-DT = np.load('Ulvebreen/Date.npy')
-T2m = np.load('Ulvebreen/THUT2m[K].npy')
-RH2 = np.load('Ulvebreen/RHWavg[%].npy')
-RH1 = np.load('Ulvebreen/SPECHUM[g_kg].npy')
-RH=RH2/RH1 # %  = partial pressure water vapor / eq pressure vapor pressure 
-plt.scatter(DT, T2m, c=RH, cmap='seismic')
+THUT = np.load('Nordenskioldbreen/T.npy')
+SIN = np.load('Nordenskioldbreen/SIN.npy')
+WS = np.load('Nordenskioldbreen/WS.npy')
+        
+plt.scatter(WS, SIN, c=THUT, vmin=-10, vmax=12, cmap='seismic')
 cbar = plt.colorbar()
-#cbar.set_label('Pressure [hPa]', labelpad=-40, y=1.05, rotation=0)
-#plt.xlabel('Wind Direction [$^\circ$]')
-#plt.ylabel('Wind Speed [m/s]')
-plt.title('Ulvebreen')
+cbar.set_label('Hut Temperature [$^\circ$ Celcius]', labelpad=-40, y=1.05, rotation=0)
+plt.ylabel('Shortwave radiation In [W/m$^2$]')
+plt.xlim(0,32)
+plt.ylim(0,800)
+plt.xlabel('Wind Speed [m/s]')
+plt.title('Nordenskioldbreen')
 plt.grid()
 plt.show()
-#fig.savefig('Figures/compare/WD-WS-PR-Ulvebreen.png')
+fig.savefig('Figures/compare/THUT-SIN-WS-Nordenskioldbreen.png')
 
-#%%
+# =============================================================================
+#%% Nordenskioldbreen dT2m and dTsurf
+# =============================================================================
+
 fig=plt.figure()
-DT = np.load('Ulvebreen/Date.npy')
-Lin = np.load('Ulvebreen/THUT2m[K].npy')
-#RH = np.load('Ulvebreen/RHWavg[%].npy')
-RH = np.load('Ulvebreen/SPECHUM[g_kg].npy')
-
-plt.scatter(DT, Lin, c=RH, cmap='seismic')
+T2M= np.load('Nordenskioldbreen/T2m.npy')
+Tsurf = np.load('Nordenskioldbreen/Tsurf.npy')
+WD = np.load('Nordenskioldbreen/WD.npy')
+WS = np.load('Nordenskioldbreen/WS.npy')
+        
+plt.scatter(WD, WS, c=(T2M-Tsurf), vmin=-1, vmax=1, cmap='seismic')
 cbar = plt.colorbar()
-#cbar.set_label('Pressure [hPa]', labelpad=-40, y=1.05, rotation=0)
-#plt.xlabel('Wind Direction [$^\circ$]')
-#plt.ylabel('Wind Speed [m/s]')
-plt.title('Ulvebreen')
+cbar.set_label('Temperature [$^\circ$]', labelpad=-40, y=1.05, rotation=0)
+plt.xlabel('Wind Direction [$^\circ$]')
+plt.ylabel('Wind Speed [m/s]')
+plt.xlim(0,360)
+plt.ylim(0,32)
+plt.title('Nordenskioldbreen difference between T$_2m$ and T$_{surface}$')
 plt.grid()
 plt.show()
-#fig.savefig('Figures/compare/WD-WS-PR-Ulvebreen.png')
+fig.savefig('Figures/compare/THUT-T2m-WD-WS-Nordenskioldbreen.png')
+
+# =============================================================================
+#%% Ulvebreen dT2m and dTsurf
+# =============================================================================
+
+fig=plt.figure()
+T2M= np.load('Ulvebreen/THUT2m[K].npy')
+Tsurf = np.load('Ulvebreen/TSURF[C].npy')
+WD = np.load('Ulvebreen/HWDavg[deg].npy')
+WS = np.load('Ulvebreen/HWSavg[m_s].npy')
+        
+plt.scatter(WD, WS, c=(T2M-Tsurf), vmin=-1, vmax=1, cmap='seismic')
+cbar = plt.colorbar()
+cbar.set_label('Temperature [$^\circ$]', labelpad=-40, y=1.05, rotation=0)
+plt.xlabel('Wind Direction [$^\circ$]')
+plt.ylabel('Wind Speed [m/s]')
+plt.title('Ulvebreen difference between T$_2m$ and T$_{surface}$')
+plt.xlim(0,360)
+plt.ylim(0,26)
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/THUT-T2m-WD-WS-Ulvebreen.png')
 
