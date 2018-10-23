@@ -63,6 +63,23 @@ fig.savefig('Figures/compare/WD-WS-PR-Nordenskioldbreen.png')
 # =============================================================================
 fig=plt.figure()
 DT = np.load('Ulvebreen/Date.npy')
+T2m = np.load('Ulvebreen/THUT2m[K].npy')
+RH2 = np.load('Ulvebreen/RHWavg[%].npy')
+RH1 = np.load('Ulvebreen/SPECHUM[g_kg].npy')
+RH=RH2/RH1 # %  = partial pressure water vapor / eq pressure vapor pressure 
+plt.scatter(DT, T2m, c=RH, cmap='seismic')
+cbar = plt.colorbar()
+#cbar.set_label('Pressure [hPa]', labelpad=-40, y=1.05, rotation=0)
+#plt.xlabel('Wind Direction [$^\circ$]')
+#plt.ylabel('Wind Speed [m/s]')
+plt.title('Ulvebreen')
+plt.grid()
+plt.show()
+#fig.savefig('Figures/compare/WD-WS-PR-Ulvebreen.png')
+
+#%%
+fig=plt.figure()
+DT = np.load('Ulvebreen/Date.npy')
 Lin = np.load('Ulvebreen/THUT2m[K].npy')
 #RH = np.load('Ulvebreen/RHWavg[%].npy')
 RH = np.load('Ulvebreen/SPECHUM[g_kg].npy')

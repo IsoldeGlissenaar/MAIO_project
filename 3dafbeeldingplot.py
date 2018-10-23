@@ -55,7 +55,7 @@ cbar.ax.set_yticklabels(['26-08-2015','21-09-2015', '21-12-2015', '21-03-2016', 
 cbar.set_label('date', rotation=360)
 plt.grid()
 plt.show()
-fig.savefig('Figures/compare/T2mUlve-T2mNorde.png')
+#fig.savefig('Figures/compare/T2mUlve-T2mNorde.png')
 
 # =============================================================================
 #%% Tsurface
@@ -79,4 +79,26 @@ cbar.ax.set_yticklabels(['26-08-2015','21-09-2015', '21-12-2015', '21-03-2016', 
 cbar.set_label('date', rotation=360)
 plt.grid()
 plt.show()
-fig.savefig('Figures/compare/TsurfU-N.png')
+#fig.savefig('Figures/compare/TsurfU-N.png')
+
+#%%
+
+fig=plt.figure()
+c = mcolors.ColorConverter().to_rgb
+rvb = make_colormap([c('red'), c('violet'),
+                     0.08, c('violet'), c('blue'), 
+                     0.37, c('blue'), c('violet'), 
+                     0.65, c('violet'), c('red') ])
+N=451
+array_dg = np.linspace(0, 10, N)
+colors = np.linspace(0,N,N)
+plt.scatter(T_nomask[:,1],T_nomask[:,0], c=colors, cmap=rvb)
+plt.plot(np.linspace(0,6,N),np.linspace(0,6,N), color='black',  linewidth=2.0)
+plt.title('RH')
+plt.xlabel('Ulvebreen')
+plt.ylabel('Nordenskioldbreen')
+cbar = plt.colorbar()
+cbar.ax.set_yticklabels(['26-08-2015','21-09-2015', '21-12-2015', '21-03-2016', '21-06-2016', '21-07-2016'])
+#cbar.set_label('date', rotation=360)
+plt.grid()
+plt.show()
