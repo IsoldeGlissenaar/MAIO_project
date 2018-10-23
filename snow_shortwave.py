@@ -73,13 +73,16 @@ pylab.rcParams.update(params)
 fig, ax1 = plt.subplots()
 plt.scatter(dates , albedo , label='albedo', s=10, c='r')
 ax1.set_xlabel('date')
+plt.xticks(rotation=45)
 ax1.set_ylim([0,1])
 # Make the y-axis label, ticks and tick labels match the line color.
-ax1.set_ylabel('radiation [W/m2]')
+ax1.set_ylabel('albedo')
 ax1.tick_params('y')
 
 ax2 = ax1.twinx()
 plt.scatter(SSH_Uday,SSH_U, label='SSH',  s=10, c= 'y')
+plt.axvline(x=SSH_Uday[248], color = 'black', linestyle='--')
+plt.axvline(x=SSH_Uday[310], color = 'black', linestyle='--')
 ax2.set_ylabel('snow height [m]')
 ax2.tick_params('y')
 
