@@ -80,7 +80,7 @@ ax1.set_ylabel('albedo')
 ax1.tick_params('y')
 
 ax2 = ax1.twinx()
-plt.scatter(SSH_Uday,SSH_U, label='SSH',  s=10, c= 'y')
+plt.scatter(SSH_Uday, -SSH_U, label='SSH',  s=10, c= 'y')
 plt.axvline(x=SSH_Uday[248], color = 'black', linestyle='--')
 plt.axvline(x=SSH_Uday[310], color = 'black', linestyle='--')
 ax2.set_ylabel('snow height [m]')
@@ -91,4 +91,34 @@ fig.legend()
 #plt.savefig('Figures/Sout_ssh.png')
 plt.show()
 
+
+#%%
+
+
+fig = plt.figure()
+
+ax1 = fig.add_subplot(211)
+plt.title('Albedo and SSH Ulvebreen')
+ax1.grid(linestyle='--')
+ax1.scatter(dates , albedo , label='albedo', s=10, c='r')
+ax1.set_ylim([0,1])
+ax1.set_ylabel('albedo')
+ax1.tick_params('y')
+ax1.xaxis.set_ticklabels([])
+
+ax2 = fig.add_subplot(212)
+ax2.grid(linestyle='--')
+ax2.scatter(SSH_Uday, -SSH_U+SSH_U[0], label='SSH',  s=10, c= 'y')
+ax2.set_ylabel('snow height [m]')
+ax2.tick_params('y')
+plt.xticks(rotation=45)
+
+ax1.axvline(x=SSH_Uday[248],c="black", linestyle='--', linewidth=2,zorder=0, clip_on=False)
+ax2.axvline(x=SSH_Uday[248],c="black", linestyle='--', linewidth=2, zorder=0,clip_on=False)
+
+ax1.axvline(x=SSH_Uday[310],c="black", linestyle='--', linewidth=2,zorder=0, clip_on=False)
+ax2.axvline(x=SSH_Uday[310],c="black", linestyle='--', linewidth=2, zorder=0,clip_on=False)
+
+plt.draw()
+fig.savefig('sneeuwhoogte/final.png', bbox_inches="tight", dpi=500)
 
