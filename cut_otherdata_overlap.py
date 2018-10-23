@@ -14,9 +14,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 direc = ""
-data_ulve = "TSURF[C]" 
-data_norden = "T"
-data_luft = "TSS"
+data_ulve = "THUT2m[K]" 
+data_norden = "T2m"
+data_luft = "TA"
 
 T_ulve=np.load(direc+"avgUlvebreen/"+data_ulve+".npy")
 T_ulveday=np.load(direc+"avgUlvebreen/"+data_ulve+"day.npy")

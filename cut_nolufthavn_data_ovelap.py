@@ -15,8 +15,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 direc = ""
-data_ulve = "SSH[m]" 
-data_norden = "H1"
+data_ulve = "NRLavg[W_m2]" 
+data_norden = "Sout"
 
 T_ulve=np.load(direc+"avgUlvebreen/"+data_ulve+".npy")
 T_ulveday=np.load(direc+"avgUlvebreen/"+data_ulve+"day.npy")
@@ -127,39 +127,6 @@ plt.scatter(nomask_dates, T_nomask[:,0], s=15 ,  c='b') #nordenskioldbreen
 plt.scatter(nomask_dates, T_nomask[:,1], s=15 , c='g') #ulvebreen
 plt.show()
 
-#%%            
-dates_snow = np.load('sneeuwhoogte/dates.npy')
-ulve_snow = np.load('sneeuwhoogte/ulve.npy')
-norden_snow = np.load('sneeuwhoogte/norden.npy')
-
-
-import matplotlib.pylab as pylab
-params = {'legend.fontsize': 'large',
-          'figure.figsize': (8, 4),
-         'axes.labelsize': 'large',
-         'axes.titlesize':'large',
-         'xtick.labelsize':'large',
-         'ytick.labelsize':'x-large'}
-pylab.rcParams.update(params)
-
-fig, ax1 = plt.subplots()
-ax1.scatter(nomask_dates, T_nomask[:,0], label='Sout Norden' , s=10, c='b') #norden
-ax1.scatter(nomask_dates, T_nomask[:,1], label= 'Sout Ulve', s=10, c='g') #ulve
-ax1.set_xlabel('date')
-# Make the y-axis label, ticks and tick labels match the line color.
-ax1.set_ylabel('Sout')
-ax1.tick_params('y')
-
-ax2 = ax1.twinx()
-ax2.scatter(dates_snow, norden_snow, label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
-ax2.scatter(dates_snow, ulve_snow, label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
-ax2.set_ylabel('snow height')
-ax2.tick_params('y')
-
-fig.tight_layout()
-fig.legend()
-#plt.savefig('Figures/Sout_ssh.png')
-plt.show()
 
 
 '''
@@ -168,7 +135,6 @@ time array. First column: Nordenskioldbreen, second column: Ulvebreen.
 T_mask is the array where the dates with no data are masked. dates is the companionaning time 
 array.
 '''
-
 
 
 
