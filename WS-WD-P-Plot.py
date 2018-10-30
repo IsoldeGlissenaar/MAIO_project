@@ -66,16 +66,27 @@ fig=plt.figure()
 THUT = np.load('Nordenskioldbreen/T.npy')
 SIN = np.load('Nordenskioldbreen/SIN.npy')
 WS = np.load('Nordenskioldbreen/WS.npy')
-THUT = T_nomask[:,2]
-SIN = T_nomask[:,0]
-WS = T_nomask[:,1]
-dates=np.load('avgNordenskioldbreen/dates.npy')
-dates_year=np.array(dates, dtype='datetime64[Y]')
-dates_day=dates-dates_year
-print(dates_day)
+Date = np.load('Nordenskioldbreen/Day.npy')
 
-        
-plt.scatter(WS, SIN, c=THUT, vmin=-10, vmax=12, cmap='seismic')
+
+data=np.zeros((len(Date),4))
+for i in range(len(Date)):
+    if Date[i] > 172 and Date[i] < 264: #21 juni - 21 sept
+        data[i,0]=THUT[i]
+        data[i,1]=SIN[i]
+        data[i,2]=WS[i]
+        data[i,3]=Date[i]
+
+
+#SIN = T_nomask[:,0]
+#THUT = T_nomask[:,1]
+#WS = T_nomask[:,2]
+#dates_year=np.array(nomask_dates, dtype='datetime64[Y]')
+#dates_day=nomask_dates-dates_year
+#print(dates_day)
+
+plt.scatter(data[:,2], data[:,1], c=data[:,0], vmin=-10, vmax=10, cmap='seismic')
+#plt.scatter(WS, SIN, c=THUT, vmin=-10, vmax=10, cmap='seismic')
 cbar = plt.colorbar()
 cbar.set_label('Hut Temperature [$^\circ$ Celcius]', labelpad=-40, y=1.05, rotation=0)
 plt.ylabel('Shortwave radiation In [W/m$^2$]')
