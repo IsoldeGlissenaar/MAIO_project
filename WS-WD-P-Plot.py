@@ -66,6 +66,14 @@ fig=plt.figure()
 THUT = np.load('Nordenskioldbreen/T.npy')
 SIN = np.load('Nordenskioldbreen/SIN.npy')
 WS = np.load('Nordenskioldbreen/WS.npy')
+THUT = T_nomask[:,2]
+SIN = T_nomask[:,0]
+WS = T_nomask[:,1]
+dates=np.load('avgNordenskioldbreen/dates.npy')
+dates_year=np.array(dates, dtype='datetime64[Y]')
+dates_day=dates-dates_year
+print(dates_day)
+
         
 plt.scatter(WS, SIN, c=THUT, vmin=-10, vmax=12, cmap='seismic')
 cbar = plt.colorbar()
@@ -122,4 +130,25 @@ plt.ylim(0,26)
 plt.grid()
 plt.show()
 fig.savefig('Figures/compare/THUT-T2m-WD-WS-Ulvebreen.png')
+
+
+# =============================================================================
+#%% Nordeskioldbreen WS - T2m
+# =============================================================================
+
+fig=plt.figure()
+WS = T_nomask[:,2]
+TN = T_nomask[:,0]
+TU = T_nomask[:,1]
+
+plt.scatter(TU, TN, c=WS, vmin=0, vmax=15, cmap='hsv')
+cbar = plt.colorbar()
+cbar.set_label('Wind Speed [m/s]', labelpad=-40, y=1.05, rotation=0)
+plt.xlabel('Temperature Ulvebreen [$^\circ$C]')
+plt.ylabel('Temperature Nordenskioldbreen [$^\circ$C]')
+plt.title('Surface Temperature')
+plt.grid()
+plt.show()
+
+
 

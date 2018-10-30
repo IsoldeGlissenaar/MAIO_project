@@ -36,6 +36,7 @@ def make_colormap(seq):
 # =============================================================================
 #%% T2m
 # =============================================================================
+'''
 fig=plt.figure()
 c = mcolors.ColorConverter().to_rgb
 rvb = make_colormap([c('red'), c('violet'),
@@ -56,6 +57,33 @@ cbar.set_label('date', rotation=360)
 plt.grid()
 plt.show()
 #fig.savefig('Figures/compare/T2mUlve-T2mNorde.png')
+'''
+
+# =============================================================================
+#%% Thut
+# =============================================================================
+fig=plt.figure()
+c = mcolors.ColorConverter().to_rgb
+rvb = make_colormap([c('red'), c('violet'),
+                     0.08, c('violet'), c('blue'), 
+                     0.37, c('blue'), c('violet'), 
+                     0.65, c('violet'), c('red') ])
+N=451
+array_dg = np.linspace(0, 10, N)
+colors = np.linspace(0,N,N)
+plt.scatter(T_nomask[:,1],T_nomask[:,0], c=colors, cmap=rvb)
+plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0], color='black',  linewidth=2.0)
+plt.xlabel('Temperature Ulvebreen [$^\circ$C]')
+plt.ylabel('Temperature Nordenskioldbreen [$^\circ$C]')
+plt.title('Temperature Hut')
+plt.xlim(-25,10)
+cbar = plt.colorbar()
+cbar.ax.set_yticklabels(['26-08-2015\n summer','21-09-2015', '21-12-2015\n winter', '21-03-2016', 'summer\n 21-06-2016', '21-09-2016'])
+#cbar.set_label('date', rotation=360)
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/Thut-U-N-2.png')
+
 
 # =============================================================================
 #%% Tsurface
@@ -75,14 +103,89 @@ plt.xlabel('Temperature Ulvebreen [$^\circ$C]')
 plt.ylabel('Temperature Nordenskioldbreen [$^\circ$C]')
 plt.title('Surface Temperature')
 cbar = plt.colorbar()
-cbar.ax.set_yticklabels(['26-08-2015','21-09-2015', '21-12-2015', '21-03-2016', '21-06-2016', '21-07-2016'])
-cbar.set_label('date', rotation=360)
+cbar.ax.set_yticklabels(['26-08-2015\n summer','21-09-2015', '21-12-2015\n winter', '21-03-2016', 'summer\n 21-06-2016', '21-07-2016 \n summer'])
+#cbar.set_label('date', rotation=360)
 plt.grid()
 plt.show()
-#fig.savefig('Figures/compare/TsurfU-N.png')
+fig.savefig('Figures/compare/TsurfU-N-2.png')
 
-#%%
+# =============================================================================
+#%% Tsurface - WS Nordeskiold
+# =============================================================================
+fig=plt.figure()
+c = mcolors.ColorConverter().to_rgb
+rvb = make_colormap([c('red'), c('violet'),
+                     0.08, c('violet'), c('blue'), 
+                     0.37, c('blue'), c('violet'), 
+                     0.65, c('violet'), c('red') ])
+N=451
+array_dg = np.linspace(0, 10, N)
+colors = np.linspace(0,N,N)
+plt.scatter(T_nomask[:,1],T_nomask[:,0], c=colors, cmap=rvb)
+plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0], color='black',  linewidth=2.0)
+plt.xlabel('Temperature Ulvebreen [$^\circ$C]')
+plt.ylabel('Temperature Nordenskioldbreen [$^\circ$C]')
+plt.title('Surface Temperature')
+cbar = plt.colorbar()
+#cbar.ax.set_yticklabels(['26-08-2015\n summer','21-09-2015', '21-12-2015\n winter', '21-03-2016', 'summer\n 21-06-2016', '21-07-2016 \n summer'])
+#cbar.set_label('date', rotation=360)
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/TsurfU-N-2.png')
 
+
+
+# =============================================================================
+#%% Tsurface
+# =============================================================================
+'''
+fig=plt.figure()
+c = mcolors.ColorConverter().to_rgb
+rvb = make_colormap([c('red'), c('violet'),
+                     0.08, c('violet'), c('blue'), 
+                     0.37, c('blue'), c('violet'), 
+                     0.65, c('violet'), c('red') ])
+N=451
+array_dg = np.linspace(0, 10, N)
+colors = np.linspace(0,N,N)
+plt.scatter(T_nomask[:,1],T_nomask[:,0], c=colors, cmap=rvb)
+plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0], color='black',  linewidth=2.0)
+plt.xlabel('Temperature Ulvebreen [$^\circ$C]')
+plt.ylabel('Temperature Nordenskioldbreen [$^\circ$C]')
+plt.title('Temperature Hut')
+cbar = plt.colorbar()
+cbar.ax.set_yticklabels(['26-08-2015\n summer','21-09-2015', '21-12-2015\n winter', '21-03-2016', '21-06-2016', '21-07-2016 \n summer'])
+#cbar.set_label('date', rotation=360)
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/Thut-U-N-2.png')
+
+# =============================================================================
+#%% Tsurface
+# =============================================================================
+fig=plt.figure()
+c = mcolors.ColorConverter().to_rgb
+rvb = make_colormap([c('red'), c('violet'),
+                     0.08, c('violet'), c('blue'), 
+                     0.37, c('blue'), c('violet'), 
+                     0.65, c('violet'), c('red') ])
+N=451
+array_dg = np.linspace(0, 10, N)
+colors = np.linspace(0,N,N)
+plt.scatter(T_nomask[:,1],T_nomask[:,0], c=colors, cmap=rvb)
+plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0], color='black',  linewidth=2.0)
+plt.xlabel('Temperature Ulvebreen [$^\circ$C]')
+plt.ylabel('Temperature Nordenskioldbreen [$^\circ$C]')
+plt.title('Surface Temperature')
+cbar = plt.colorbar()
+cbar.ax.set_yticklabels(['26-08-2015\n summer','21-09-2015', '21-12-2015\n winter', '21-03-2016', '21-06-2016', '21-07-2016 \n summer'])
+#cbar.set_label('date', rotation=360)
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/TsurfU-N-2.png')
+'''
+#%% RH
+'''
 fig=plt.figure()
 c = mcolors.ColorConverter().to_rgb
 rvb = make_colormap([c('red'), c('violet'),
@@ -102,3 +205,4 @@ cbar.ax.set_yticklabels(['26-08-2015','21-09-2015', '21-12-2015', '21-03-2016', 
 #cbar.set_label('date', rotation=360)
 plt.grid()
 plt.show()
+'''
