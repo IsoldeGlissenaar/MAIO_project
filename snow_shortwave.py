@@ -218,3 +218,6 @@ ax2.axvline(x=H_Nday[1080],c="black", linestyle='--', linewidth=2, zorder=0,clip
 
 plt.draw()
 fig2.savefig('sneeuwhoogte/NordenFinal.png', bbox_inches="tight", dpi=500)
+
+
+
