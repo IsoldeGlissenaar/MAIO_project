@@ -144,21 +144,26 @@ params = {'legend.fontsize': 'large',
 pylab.rcParams.update(params)
 
 fig, ax1 = plt.subplots()
-ax1.scatter(nomask_dates, T_nomask[:,0], label='Sout Norden' , s=10, c='b') #norden
+ax1.scatter(nomask_dates, T_nomask[:,0], label='Sout Norden', s=10, c='b') #norden
 ax1.scatter(nomask_dates, T_nomask[:,1], label= 'Sout Ulve', s=10, c='g') #ulve
-ax1.set_xlabel('date')
+plt.xticks(rotation=45)
+plt.grid(linestyle='--', color='grey')
 # Make the y-axis label, ticks and tick labels match the line color.
-ax1.set_ylabel('Sout')
+ax1.set_ylabel('albedo')
 ax1.tick_params('y')
 
 ax2 = ax1.twinx()
-ax2.scatter(dates_snow, norden_snow, label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
-ax2.scatter(dates_snow, ulve_snow, label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
-ax2.set_ylabel('snow height')
+ax2.scatter(dates_snow, norden_snow - np.min(norden_snow), label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
+ax2.scatter(dates_snow, ulve_snow - np.min(norden_snow), label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
+
+ax2.scatter(np.nan, np.nan, label = 'Sout Norden', s=30, color='b', marker = '.')
+ax2.scatter(np.nan, np.nan, label = 'Sout Ulve', s=30, color='g', marker = '.')
+
+ax2.set_ylabel('snow height [m]')
 ax2.tick_params('y')
 
+plt.legend(markerscale=4., bbox_to_anchor=(1.1,0.5), loc="center left")
 fig.tight_layout()
-fig.legend()
 #plt.savefig('Figures/Sout_ssh.png')
 plt.show()
 

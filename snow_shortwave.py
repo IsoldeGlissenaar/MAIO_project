@@ -224,10 +224,11 @@ fig2.savefig('sneeuwhoogte/NordenFinal.png', bbox_inches="tight", dpi=500)
 plt.plot(dates[70:436], albedo[70:436], 'g.',label='Ulvebreen')
 plt.plot(datesN[2412:2778], albedoN[2412:2778], 'b.', label='Nordenskioldbreen')
 plt.ylim([0,1])
+plt.title('albedo')
 plt.ylabel('albedo')
-#plt.legend(bbox_to_anchor=(1.0,0.5), loc="center left")
+plt.legend(bbox_to_anchor=(1.0,0.5), loc="center left")
 plt.xticks(rotation=45)
-#plt.grid(linestyle='dotted')
+plt.grid(linestyle='dotted')
 plt.show()
 
 
