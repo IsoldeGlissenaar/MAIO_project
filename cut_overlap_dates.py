@@ -143,9 +143,9 @@ array.
 
 #%%
 
-
 plt.plot(nomask_dates, T_nomask[:,0],'b.', label='Nordenskioldbreen')
 plt.plot(nomask_dates, T_nomask[:,1],  'g.',label='Ulvebreen')
+plt.plot(nomask_dates, T_nomask[:,2],'y.', label='Lufthavn')
 plt.ylabel('Temperature [$^\circ$C]')
 plt.xticks(rotation=45)
 plt.legend(bbox_to_anchor=(1.0,0.5), loc="center left")

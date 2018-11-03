@@ -153,8 +153,8 @@ ax1.set_ylabel('albedo')
 ax1.tick_params('y')
 
 ax2 = ax1.twinx()
-ax2.scatter(dates_snow, norden_snow - np.min(norden_snow), label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
-ax2.scatter(dates_snow, ulve_snow - np.min(norden_snow), label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
+ax2.scatter(dates_snow, -norden_snow + np.max(norden_snow), label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
+ax2.scatter(dates_snow, -ulve_snow + np.max(norden_snow), label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
 
 ax2.scatter(np.nan, np.nan, label = 'Sout Norden', s=30, color='b', marker = '.')
 ax2.scatter(np.nan, np.nan, label = 'Sout Ulve', s=30, color='g', marker = '.')
