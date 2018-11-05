@@ -144,25 +144,29 @@ params = {'legend.fontsize': 'large',
 pylab.rcParams.update(params)
 
 fig, ax1 = plt.subplots()
-ax1.scatter(nomask_dates, T_nomask[:,0], label='Sout Norden', s=10, c='b') #norden
-ax1.scatter(nomask_dates, T_nomask[:,1], label= 'Sout Ulve', s=10, c='g') #ulve
+#ax1.scatter(nomask_dates, T_nomask[:,0], label='Sout Norden', s=10, c='b') #norden
+#ax1.scatter(nomask_dates, T_nomask[:,1], label= 'Sout Ulve', s=10, c='g') #ulve
+ax1.scatter(datesN[2345:2664], albedoN[2345:2664], label='Albedo Norden', s=10, c='b') #norden
+ax1.scatter(dates[3:322], albedo[3:322], label= 'Albedo Ulve', s=10, c='g') #ulve
 plt.xticks(rotation=45)
 plt.grid(linestyle='--', color='grey')
 # Make the y-axis label, ticks and tick labels match the line color.
 ax1.set_ylabel('albedo')
+ax1.set_ylim([0,1])
 ax1.tick_params('y')
 
 ax2 = ax1.twinx()
-ax2.scatter(dates_snow, -norden_snow + np.max(norden_snow), label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
-ax2.scatter(dates_snow, -ulve_snow + np.max(norden_snow), label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
+ax2.scatter(dates_snow, norden_snow, label= 'SSH Norden ', s=10, c='aquamarine', marker='v') #norden
+ax2.scatter(dates_snow, ulve_snow , label= 'SSH Ulve',  s=10, c='lime', marker='v')   #ulve
 
-ax2.scatter(np.nan, np.nan, label = 'Sout Norden', s=30, color='b', marker = '.')
-ax2.scatter(np.nan, np.nan, label = 'Sout Ulve', s=30, color='g', marker = '.')
+ax2.scatter(np.nan, np.nan, label = 'Albedo Norden', s=30, color='b', marker = '.')
+ax2.scatter(np.nan, np.nan, label = 'Albedo Ulve', s=30, color='g', marker = '.')
 
-ax2.set_ylabel('snow height [m]')
+ax2.set_ylabel('snow height uncorrected [m]')
 ax2.tick_params('y')
+#ax2.set_ylim([0,3])
 
-plt.legend(markerscale=4., bbox_to_anchor=(1.1,0.5), loc="center left")
+plt.legend(markerscale=4., bbox_to_anchor=(1.2,0.5), loc="center left")
 fig.tight_layout()
 #plt.savefig('Figures/Sout_ssh.png')
 plt.show()
