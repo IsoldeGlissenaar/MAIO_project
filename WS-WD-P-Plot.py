@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import matplotlib.pylab as pylab
 params = {'legend.fontsize': 'x-large',
-          'figure.figsize': (12, 10),
+          'figure.figsize': (10, 10),
          'axes.labelsize': 'xx-large',
          'axes.titlesize':'xx-large',
          'xtick.labelsize':'xx-large',
@@ -99,6 +99,47 @@ plt.show()
 fig.savefig('Figures/compare/THUT-SIN-WS-Nordenskioldbreen.png')
 
 # =============================================================================
+#%% Nordenskioldbreen
+# =============================================================================
+
+fig=plt.figure()
+THUT = np.load('Nordenskioldbreen/Tsurf.npy')
+SIN = np.load('Nordenskioldbreen/SIN.npy')
+WS = np.load('Nordenskioldbreen/WS.npy')
+Date = np.load('Nordenskioldbreen/Day.npy')
+
+
+data=np.zeros((len(Date),4))
+for i in range(len(Date)):
+    if Date[i] > 172 and Date[i] < 264: #21 juni - 21 sept
+        data[i,0]=THUT[i]
+        data[i,1]=SIN[i]
+        data[i,2]=WS[i]
+        data[i,3]=Date[i]
+
+
+#SIN = T_nomask[:,0]
+#THUT = T_nomask[:,1]
+#WS = T_nomask[:,2]
+#dates_year=np.array(nomask_dates, dtype='datetime64[Y]')
+#dates_day=nomask_dates-dates_year
+#print(dates_day)
+
+plt.scatter(data[:,2], data[:,1], c=data[:,0], vmin=-10, vmax=10, cmap='seismic')
+#plt.scatter(WS, SIN, c=THUT, vmin=-10, vmax=10, cmap='seismic')
+cbar = plt.colorbar()
+cbar.set_label('Surface Temperature [$^\circ$ Celcius]', labelpad=-40, y=1.05, rotation=0)
+plt.ylabel('Shortwave radiation In [W/m$^2$]')
+plt.xlim(0,20)
+plt.ylim(0,800)
+plt.xlabel('Wind Speed [m/s]')
+plt.title('Nordenskioldbreen')
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/Tsurf-SIN-WS-Nordenskioldbreen.png')
+
+
+# =============================================================================
 #%% Nordenskioldbreen dT2m and dTsurf
 # =============================================================================
 
@@ -161,5 +202,46 @@ plt.title('Surface Temperature')
 plt.grid()
 plt.show()
 
+# =============================================================================
+#%% Nordenskioldbreen
+# =============================================================================
 
+fig=plt.figure()
+
+THUT = np.load('Ulvebreen/TSURF[C].npy')
+WS = np.load('Ulvebreen/HWSavg[m_s].npy')
+SIN = np.load('Ulvebreen/NRUavg[W_m2].npy')
+Date = np.load('Ulvebreen/Date.npy')
+
+
+
+
+data=np.zeros((len(Date),4))
+for i in range(len(Date)):
+#    if Date[i] > 172 and Date[i] < 264: #21 juni - 21 sept
+        data[i,0]=THUT[i]
+        data[i,1]=SIN[i]
+        data[i,2]=WS[i]
+#        data[i,3]=Date[i]
+
+
+#SIN = T_nomask[:,0]
+#THUT = T_nomask[:,1]
+#WS = T_nomask[:,2]
+#dates_year=np.array(nomask_dates, dtype='datetime64[Y]')
+#dates_day=nomask_dates-dates_year
+#print(dates_day)
+
+plt.scatter(data[:,2], data[:,1], c=data[:,0], vmin=-10, vmax=10, cmap='seismic')
+#plt.scatter(WS, SIN, c=THUT, vmin=-10, vmax=10, cmap='seismic')
+cbar = plt.colorbar()
+cbar.set_label('Surface Temperature [$^\circ$ Celcius]', labelpad=-40, y=1.05, rotation=0)
+plt.ylabel('Shortwave radiation In [W/m$^2$]')
+plt.xlim(0,20)
+plt.ylim(0,800)
+plt.xlabel('Wind Speed [m/s]')
+plt.title('Ulvebreen')
+plt.grid()
+plt.show()
+fig.savefig('Figures/compare/Tsurf-SIN-WS-Ulvebreen.png')
 
