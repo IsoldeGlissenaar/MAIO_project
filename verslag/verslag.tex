@@ -19,10 +19,13 @@
 \usepackage[nodayofweek]{datetime}
 \usepackage{tikz}
 \usepackage{todonotes}
-\usetikzlibrary{shapes.geometric, arrows}
+
+
 \usepackage{pdfpages}
-\usepackage{xcolor}
 \usepackage{siunitx}
+\usepackage[HTML]{xcolor}
+\usepackage{multirow,colortbl,array}
+
 
 \begin{document}
 \begin{titlepage}
@@ -73,7 +76,7 @@
 %– Detailed analyses of chosen subject\\
 %+- 15 pages}
 
-Around 1595, a Dutch man called Willem Barentsz went on expedition to the North East Passage when he discovered  Svalbard. \cite{sval} To imagine this situation, a painting of his ship is made and visible in figure \ref{fig:wbs}. From this moment, Dutch people were concerned by research on Svalbard. In 2010, people observed big climate changes, while they had less research data. To investigate the newest situation on Svalbard, SEES (Netherlands Scientific Expedition Edgeøya Spitsbergen) has been established, which is still active nowadays. \cite{sees} 
+Around 1595, a Dutch man called Willem Barentsz went on expedition to search for a North East Passage when he discovered Svalbard \cite{sval}. To imagine this situation, a painting of his ship is made by Arnold de Lange and shown in Figure \ref{fig:wbs}. From this moment on, Dutch people invested in research on Svalbard's climate and ecology. Around 2010, the interest in research on the eastern side of the island Spitsbergen increased. However, there is a small amount of data from this part of the archipelago. To investigate the present situation and organize a new expedition to this part of the archipelago, SEES (Netherlands Scientific Expedition Edge\o ya Spitsbergen) has been established, which is still active nowadays \cite{sees}. SEES organized an expedition in august 2015 during which an Automatic Weather Station was installed on the Ulvebreen.
 
 \begin{figure}[h]
 \includegraphics[scale=1, width=0.5\textwidth]{wbs.jpg}
@@ -82,20 +85,20 @@ Around 1595, a Dutch man called Willem Barentsz went on expedition to the North 
 \label{fig:wbs}
 \end{figure}
 
-In this study, measurement data from Svalbard is used to answer the question:
+In our project, we retrieved measurement data from three weather stations in Svalbard. Two are located on glaciers (Nordenski\H{o}ldbreen and Ulvebreen) and one on land (Svalbard Lufthavn). In this study, measurement data from the three locations on Svalbard is used to answer the following question:
 
 \textit{How can the local characteristics of two Svalbard glaciers be explained?}
 
 To investigate this, sub-questions arise:
-\textit{What are the characteristics of the Nordenskiöldbreen and the Ulvebreen?} and \textit{What are the differences between the two glaciers?}
+\textit{What are the characteristics of the Nordenski\H{o}ldbreen and the Ulvebreen?} and \textit{What are the differences between the two glaciers?}
 
-The conducted research is described comprehensively in this report. Explained in chapter \ref{sec:method} are the origin of the measurements and the method of handling obtained data,  which is used to analyze the data. Chapter \ref{sec:results} contains results of this research, obtained by comparing data. In chapter \ref{sec:discussion} results are discussed and compared with expectations. In chapter \ref{sec:conclusion}, a conclusion is presented. Finally, a bibliography is appended as well as other appendices.
+Explained in chapter \ref{sec:method} is the origin of the measurements and the data handling methods. Chapter \ref{sec:results} contains results of this research, obtained by comparing data. In chapter \ref{sec:discussion} results are discussed and compared with the hypothesis. In chapter \ref{sec:conclusion}, a conclusion is presented.
 
 \newpage
 
 \chapter{Method}\label{sec:method}
 
-To investigate the local characteristics of two glaciers on Svalbard, the location of the glaciers are described in section \ref{sec:loc}. On those glaciers, instruments are installed to measure different variables, which are described in section \ref{sec:instr}. Finally, the huge amount of data from those instruments has to transform into a manageable amount, which is described in chapter \ref{sec:datah}.
+To investigate the local characteristics of two glaciers on Svalbard, the location of the glaciers are described in section \ref{sec:loc}. On those glaciers, instruments are installed to measure different variables, which are described in section \ref{sec:instr}. Finally, the data handling is discussed in section \ref{sec:datah}.
 
 %\textcolor{red}{location of measurements, instruments, data handling (on making the daily averages and handling the data gaps.)} are investigated. 
 
@@ -111,22 +114,21 @@ This study discusses data from weather stations situated on Svalbard, which is a
 \label{fig:current}
 \end{figure}
 
-All three measurement locations are situated on the largest island, called Spitsbergen. Data are used from two weather stations from the Institute for Marine and Atmospheric research Utrecht (IMAU) located on two glaciers and data from an operational station from the Norwegian Meteorological Institute (Figure \ref{fig:locations}).
+All three measurement locations are situated on the largest island, called Spitsbergen. Data is used from two weather stations from the Institute for Marine and Atmospheric research Utrecht (IMAU) located on two glaciers, and data from an operational station from the Norwegian Meteorological Institute (Figure \ref{fig:locations}).
 
 \begin{figure}[h]
 \includegraphics[scale=1, width=0.5\textwidth]{svalbard_locations.png}
 \includegraphics[scale=1, width=0.33\textwidth]{height.jpg}
 \centering{}
-\caption{Left: Map of Svalbard showing the locations of the weather stations. Blue: Nordenski\H{o}ldbreen, green: Ulvebreen, yellow: Svalbard Lufthavn. Right: Schematic picture of differences in height}
+\caption{Left: Map (Norwegian Polar Institute) of Svalbard showing the locations of the weather stations. Blue: Nordenski\H{o}ldbreen, green: Ulvebreen, yellow: Svalbard Lufthavn. Right: Schematic picture of differences in height}
 \label{fig:locations}
 \end{figure}
-\todo{Map from the Norwegian Polar Institute (toposvalbard)}
 
 The weather stations are situated on the Nordenski\H{o}ldbreen and the Ulvebreen. The Nordenski\H{o}ldbreen is a marine-terminating glacier, terminating in Adolfsbukta, which is a branch of Billefjorden. The glacier is situated roughly in the middle of the island Spitsbergen. The glacier is $\SI{25}{km}$ long, $\SI{11}{km}$ wide and located 529 meters above sea level (m a.s.l.). It originates from Lomonosovfonna and flows in southwesterly direction (Figure \ref{fig:norden}). 
 
 The Ulvebreen is also a marine-terminating glacier. This glacier is a tributary to Nordmannsfonna and terminates in Dunérbukta, at the east of Spitsbergen. The Ulvebreen is $\SI{9}{km}$ long, $\SI{2.5}{km}$ wide and located at 140 m a.s.l., which is a difference of 389 meter compared to the Nordenski\H{o}ldbreen. It flows in southeasterly direction (Figure \ref{fig:ulve}). 
 
-The third measurement location is an operational station at Svalbard Lufthavn, close to the largest settlement on Svalbard: Longyearbyen. This operational station is run by the Norwegian Meteorological Institute. Svalbard Lufthavn is located at Adventfjorden, which debouches into Isfjorden at 28 m a.s.l., which is a difference of 501 meter with the Nordenski\H{o}ldbreen and 112 meter with the Ulvebreen, also schematically drawn in figure \ref{fig:locations}.
+The third measurement location is an operational station at Svalbard Lufthavn, close to the largest settlement on Svalbard: Longyearbyen. This operational station is run by the Norwegian Meteorological Institute. Svalbard Lufthavn is located at Adventfjorden, which debouches into Isfjorden. It has a height of 28 m a.s.l., which is a difference of 501 meter with the Nordenski\H{o}ldbreen and 112 meter with the Ulvebreen, also schematically drawn in Figure \ref{fig:locations}.
 
 \begin{figure}[h]
 \includegraphics[scale=1, width=0.45\textwidth]{nskimap.jpg}
@@ -146,29 +148,30 @@ The third measurement location is an operational station at Svalbard Lufthavn, c
 
 \newpage
 \section{Instruments}\label{sec:instr}
-Measurement data used for this study is mainly coming from two Automatic Weather Stations (AWS) on glaciers, as visible in figure \ref{fig:instrn} for the Nordenskiolbreen and figure \ref{fig:instru} for the Ulvebreen.
+\todo{figures met kleine letters} 
+Measurement data used for this study is mainly retrieved from two Automatic Weather Stations (AWS) on glaciers. The AWS on the Nordenski\H{o}ldbreen is depicted in figure \ref{fig:instrn} and the AWS on the Ulvebreen in figure \ref{fig:instru}.
 
 \begin{figure}[h]
 \raggedright
 \begin{minipage}{0.5\textwidth}
 \centering{}
-    \includegraphics[width=0.95\textwidth]{nski1.jpg}
+    \includegraphics[width=0.9\textwidth]{nski1.jpg}
     \caption{AWS Nordenski\H{o}ldbreen \cite{uuproj}}
     \label{fig:instrn}
 \end{minipage}%
 \begin{minipage}{0.5\textwidth}
 \centering{}
-    \includegraphics[width=0.95\textwidth]{ulve1.jpg}
+    \includegraphics[width=1.05\textwidth]{ulve1.jpg}
     \caption{AWS Ulvebreen \cite{uuproj}}
     \label{fig:instru}
 \end{minipage}%
 \end{figure}
 
-In figures \ref{fig:instrn} and \ref{fig:instru}, different instruments are visible, where each instrument has his own specialty. Next the different measured variables at the Nordenski\H{o}ldbreen and the Ulvebreen are roughly explained. Finally, the used measurement data of the Lufthavn is described.\\
+In figures \ref{fig:instrn} and \ref{fig:instru}, different instruments are visible, where each instrument has his own purpose. Next the different measured variables at the Nordenski\H{o}ldbreen and the Ulvebreen are explained. Finally, the used measurement data of the Lufthavn is described.\\
 
-The Nordenski\H{o}ldbreen was operational from March 2009 until 2016. Within this time, every 30 minutes measurements of different variables were saved to the logger. Unfortunately, because of broken instruments and a location which is hard to reach, the measurement data of the Nordenski\H{o}ldbreen is not serried the whole time. A inclinometer is used to measure the tilt and an anemometer is used to measure the horizontal wind speed and direction. A radiometer with two pyranometers is used to measure the shortwave and longwave radiation for incoming and outgoing directions. Thereby, the net temperature of the radiometer is measured and a barometer is measuring the pressure. The snow temperature is measured at 10 different depths. The \todo{sonic snow height} is measured twice and a quality number is used to pick a measurement (1 or 2). Finally, the battery is logged as well as the temperature in the logger, to look at the status of the instruments itself. With all those measurements, the surface temperature is derived from the outgoing longwave radiation. The Potential temperature is based on the main hut temperature and pressure. The temperature at 2 meter is based on the main hut temperature and the sonic snow height. The specific humidity is based on the main hut temperature and pressure as well. \\
+The AWS on the Nordenski\H{o}ldbreen was operational from March 2009 until December 2016. Within this time, measurements of different variables for timesteps of 30 minutes were saved onto the logger. Unfortunately, because of broken instruments and a location which is hard to reach, there are gaps in the measurement data for the Nordenski\H{o}ldbreen. It should be noted that the AWS on the Nordenski\H{o}ldbreen is drilled into the ice of the glacier, so the height does not change due to the melting of the ice. The weather station uses different instruments. Firstly, the temperature is measured with a thermometer. An anemometer is used to measure the horizontal wind speed and direction. A radiometer with two pyranometers is used to measure the shortwave and longwave radiation for incoming and outgoing directions. A barometer measures the pressure. The snow temperature is measured at 10 different depths. The snow height is measured with an ultrasonic sound meter. An inclinometer is used to measure the tilt.  Finally, the battery is logged as well as the temperature in the logger, to look at the status of the instruments themselves. With all those measurements, the surface temperature is derived from the outgoing longwave radiation. The potential temperature is based on the main hut temperature and pressure. The temperature at 2 meter is based on the main hut temperature and the sonic snow height. The specific humidity is based on the main hut temperature and pressure. \\
 
-The AWS on the Ulvebreen is placed as part of the Netherlands Scientific Expedition Edge$ø$ya Spitsbergen (SEES) in 2015 \cite{uuproj}. Like at the Nordenski\H{o}ldbreen, every 30 minutes data is saved to a logger and this process is still going on (also with some gaps in between). Measurements of the Ulvebreen are slightly different in some ways compared to the Nordenski\H{o}ldbreen. For example, instead of snow temperature at 10 different locations, it are 8 different locations. Also, in addition to the Nordenski\H{o}ldbreen, an ablation draw wire is added to the AWS. Figure \ref{fig:ablation} shows a schematic picture of the ablation wire. 
+The AWS on the Ulvebreen is placed as part of the Netherlands Scientific Expedition Edge$ø$ya Spitsbergen (SEES) in August 2015 \cite{uuproj}. Like at the Nordenski\H{o}ldbreen, every 30 minutes data is saved to a logger and this process is still ongoing (the measuremnts from this station also have some data gaps). The AWS on the Ulvebreen is slightly different compared to the one on the Nordenski\H{o}ldbreen. The AWS on the Ulvebreen is positioned on top of the glacier and is therefor freely to move with the ice. This gives a different result in the snow height measurements. On the Nordenskiöldbreen (where the AWS is drilled into the ice), the snow height measurements give the height of the weather station above the top of the glacier and therefor also increases if the ice melts. On the Ulvebreen however, only the snow melt is recorded with the ultrasonic sensor. However, the AWS on the Ulvebreen also includes an ablation draw wire, which is used to study the ice melt. Figure \ref{fig:ablation} shows a schematic picture of the ablation wire. 
 
 \begin{figure}[h]
 \raggedright
@@ -180,54 +183,24 @@ The AWS on the Ulvebreen is placed as part of the Netherlands Scientific Expedit
 \end{minipage}%
 \end{figure}
 
-As visible in figure \ref{fig:ablation}, weights are fixed in the ice. A draw wire sensor is placed on the other side of the wire. This sensor is measuring the difference in time and the difference in height. \cite{abl} The difference in height is because of the ablation at the glacier.
+As visible in figure \ref{fig:ablation}, weights are fixed in the ice. A draw wire sensor is placed on top of the ice. This sensor is measuring the height above the fixed weight \cite{abl}. A decrease in height is caused by the ablation of the glacier.
 
-Finally, from the lufthavn observation station, only data of the wind direction and wind speed, air pressure at station level and air temperature is used to compare this with the two glaciers.
+Finally, from the observation station on Svalbard Lufthavn, only data of the wind direction and wind speed, air pressure at station level and air temperature is used to compare this with the two glaciers.
 
 \section{Data handling}\label{sec:datah}
 
-As described before, the dataset from the AWS on the Ulvebreen consists of data every 30 minutes from 2015-08-22 to 2018-09-13. The dataset from the Nordenski\H{o}ldbreen AWS also contains 30 minute data from 2009-03-24 to 2016-12-03. Weather data from Svalbard Lufthavn were downloaded from the Norwegian Meteorological Institute \cite{sharkii} and contains 6 hourly data from 0, 6, 12 and 18 UTC. The download consists of data from 2009-03-24 to 2018-09-13, the dates that also data from the glaciers are available. All three datasets have a few shorter and longer gaps in measurements. To handle the amount of data, daily averages are made where possible. If at least 20 data points are available for the Ulvebreen and Nordenski\H{o}ldbreen, the daily average is calculated. Since the timestep of the lufthavn is different, the daily average is calculated if 3 data points are availale in this case. When comparing locations with each other, the data is cut to the same datalength, which is from 2015-08-22 to 2016-12-03, since data between those points is available for all locations, except for gaps. If a gap is detected in one of the sources, this day is not taken into account. 
+As described before, the dataset from the AWS on the Ulvebreen consists of data every 30 minutes from 2015-08-22 to 2018-09-13. The dataset from the Nordenski\H{o}ldbreen AWS also contains 30 minute data from 2009-03-24 to 2016-12-03. Weather data from Svalbard Lufthavn were downloaded from the Norwegian Meteorological Institute \cite{sharkii} and contains 6 hourly data from 0, 6, 12 and 18 UTC. The download consists of data from 2009-03-24 to 2018-09-13, the dates on which also data from the glaciers are available. All three datasets have a few shorter and longer gaps in measurements, caused by the failure of instruments (Ulvebreen and Nordenski\H{o}ldbreen) or too high uncertainty of the measurements (Lufthavn). To study trends in the long time series, daily averages of the data were made. The daily averages were calculated for the Ulvebreen and the Nordenski\H{o}ldbreen if at least 20 datapoints of that day were available. If there were less datapoints available the daily average was possibly not representative and thus assigned a NaN value. Because for the measurements at Lufthavn there are only measurements a day, the daily average was calculated if at least 3 datapoints were available. 
 
-%Ulvebreen:
-%30 min from 2015-08-22 to 2018-09-13.
-
-%Nordenskiold:
-%30 min data from 2009-03-24 to 2016-12-03.
-
-%Lufthavn:
-%6 hour data (0, 6, 12, 18 UTC).  Download from 2009-03-24 to 2018-09-13. (from norwegian meteorological institute.  
-
-%Daily average: for ulvebreen and nordenskioldbreen if at least 1 datapoint available for timeslots: 0-6, 6-12, 12-18 and 18-24 a daily average is made. For Lufthavn: at least three available datapoints. 
-
-%Comparison between two locations: cut to same datelength : 2015-08-22 to 2016-12-03 (data available for all locations). If daily average of one is not available: all are nan. 
-
+For the comparison between the three data stations, the data was cut to the period of time where all three stations have measurements, which is from 2015-08-22 to 2016-12-03. This period will from now on be called the data overlap period. Only the daily averages are used if they were calculated for all three stations. If one of them had a NaN value, this day was not used.
 
 
 \newpage
 \chapter{Results}\label{sec:results}
-In this chapter, results of the investigation of the data are described in different parts. First, a comparison in temperature is made, which is described in section \ref{sec:T}. Secondly, the wind directions differ for each glacier, which is detailed described in section \ref{sec:katw}. Finally, differences between the radiation is investigated and explained in section \ref{sec:rad}.
+In this chapter, results of the investigation of the data are described in different sections. First, a comparison of the temperature at the weather stations is made, which is described in section \ref{sec:T}. Secondly, the wind directions differ for each glacier, which is in detail described in section \ref{sec:katw}. Finally, differences between the radiation are investigated and explained in section \ref{sec:rad}.
 
-\section{Temperature} \label{sec:T}\todo{alle data or gemiddelde?}
-The temperature at 2 meter is compared for the Lufthavn, Ulvebreen and Nordenski\H{o}ldbreen. Results are visibile in figure \ref{fig:T2m}. From this plot, Nordenski\H{o}ldbreen seems colder than Ulvebreen, while the Lufthaven seems warmer. This is probably because the Nordenski\H{o}ldbreen is located 389 meter higher than the Ulvebreen, as described in section \ref{sec:loc}. Mean values the temperature at 2 meter of -7.0 degrees at the Nordenski\H{o}ldbreen, -4.9 degrees at the Ulvebreen and -2.1 degrees Celcius at Lufthavn. To correct for the temperatures between Nordenski\H{o}ldbreen and Ulvebreen, the lapse rate is calculated by equation \ref{eq:lr}.
-\todo{How to get 0.6 lapse rate? Source?}
-
-\begin{equation}\label{eq:lr}
-389 \ meter * 0.6 \ \frac{degrees}{meter} = 2,334 \ degrees \ Celcius
-\end{equation}
-
-To correct for the temperatures between Ulvebreen and the lufthavn, the lapse rate is calculated by equation \ref{eq:lr2}.
-\todo{How to get 0.6 lapse rate? Source?}
-
-\begin{equation}\label{eq:lr2}
-112 \ meter * 0.6 \ \frac{degrees}{meter} = 0.67 \ degrees \ Celcius
-\end{equation}
-
-Taking into account those lapse rates, it is 0.21 degrees colder in the Ulvebreen than Nordenski\H{o}ldbreen than expected. To confirm this, a t-test is done. With a p-value of 0.68, this is not significant. With the lapse rate for the lufthavn, it is 2,09 degrees colder at the Ulvebreen than at the lufthavn. With a resulting p-value of 0.4e-5 from the t-test, this can be remarked as significant. \\
-
-%-0.21670403407876862  degrees Celsius colder in Ulvebreen than expected from lapse rate
-%p is Ttest_indResult(statistic=0.40791587741598373, pvalue=0.6834965187475701)
-%-2.0939467510054652  degrees Celsius colder in Ulvebreen than expected from lapse rate
-%p is Ttest_indResult(statistic=4.115710417858246, pvalue=4.460982528311628e-05)
+\section{Temperature} \label{sec:T}
+\todo{alle data or gemiddelde?}
+The daily average temperature at a height of two meter is compared for the Lufthavn, Ulvebreen and Nordenski\H{o}ldbreen during the data overlap period (figure \ref{fig:T2m}). From this plot, Nordenski\H{o}ldbreen seems colder than Ulvebreen, while the Lufthaven seems warmer. The mean value for the 2 meter temperature during this period is $\SI{-7.0}{^{\circ}C}$ at the Nordenski\H{o}ldbreen, $\SI{-4.9}{^{\circ}C}$ at the Ulvebreen and $\SI{-2.1}{^{\circ}C}$ at Lufthavn. The main difference between mean temperature is caused by the difference in height of the locations. The Nordenski\H{o}ldbreen is located at 529 meters a.s.l, the Ulvebreen at 140 meters a.s.l. and Svalbard Lufthavn at 28 meters a.s.l., as described in section \ref{sec:loc}. 
 
 \begin{figure}[h]
 \centering{}
@@ -236,13 +209,35 @@ Taking into account those lapse rates, it is 0.21 degrees colder in the Ulvebree
     \caption{Comparison of temperature at 2 meter height for Nordenski\H{o}ldbreen, Ulvebreen and Lufthavn, where colors are corresponding to the legend.}
 \end{figure}
 
-Also, the surface temperature of both glaciers Nordenski\H{o}ldbreen and Ulvebreen are compared with each other, visible in figure 
-\ref{fig:Tsurf}. Looking through the different values at the axis, the Nordenski\H{o}ldbreen looks colder. To correct for this, again the lapse rate is used of 2,334 degrees (from equation \ref{eq:lr}) which is added to the data, corresponding to the black line in figure \ref{fig:Tsurf}. For example, when a temperature of -10 degrees Celcius is reached at the Ulvebreen, it has to be -12,3 degrees at Nordenski\H{o}ldbreen when corrected for height. With this lapse rate, it is 0.15 degrees Celcius warmer at the Ulvebreen than expected. Again, a T-test is done for the difference in surface temperatures for both glaciers. With a p-value of 0.7, the Ulvebreen is not significant warmer than the Nordenski\H{o}ldbreen.
+To correct for the difference in height, for all three measurement locations the expected temperature at sea level are calculated by using the lapse rate. A lapse rate of $\SI{-6}{^{\circ}C/km}$ is used, meaning that a location at \SI{1}{km} higher should be $\SI{6}{^{\circ}C}$ colder. \todo{0.6 Source?} Calculating the expected temperature for the Nordenski\H{o}ldbreen at sea level height gives:
 
-To conclude, taking into account the lapse rate, the temperatures overlap really well. So, the temperature differences between the locations of the measurement are related to the height of the measurements.
+\begin{equation}
+    T_{corrected} = \SI{-7.0}{^\circ C} + \SI{6}{^\circ C/km} \cdot \SI{0.529}{km} = \SI{-3.83}{^\circ C}
+    \label{eq:Tatsl}
+\end{equation}
 
-%0.148485162556455  degrees Celsius colder in Ulvebreen than expected from lapse rate
-%p is Ttest_indResult(statistic=-0.3463400286433108, pvalue=0.7291681410617556)
+The same is done for the other two locations, giving a corrected mean temperature of $\SI{-4.06}{^\circ C}$ for the Ulvebreen and $\SI{-1.89}{^\circ C}$ for the Lufthavn. It can be noted that the mean temperatures cor
+
+Taking into account those lapse rates, differences between the locations are calculated. Results are visible in table \ref{tb:avg}. To investigate if the results are significant, a t-test is done. A red cell is corresponding to a significant result. 
+
+\todo{check table and writing which is warmer in table, how to come to table?}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Location}          & \textbf{Ulvebreen}                              & \textbf{Nordenski\H{o}ldbreen}                      & \textbf{Lufthavn}                               \\ \hline
+\textbf{Ulvebreen}         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{9B9B9B} } & 0.21                                            & \cellcolor[HTML]{FE996B}2.1                     \\ \hline
+\textbf{Nordenski\H{o}ldbreen} & -0.21                                           & \cellcolor[HTML]{C0C0C0}{\color[HTML]{9B9B9B} } & \cellcolor[HTML]{FE996B}-1.9                    \\ \hline
+\textbf{Lufthavn}          & \cellcolor[HTML]{FE996B}-2.1                    & \cellcolor[HTML]{FE996B}1.9                     & \cellcolor[HTML]{C0C0C0}{\color[HTML]{9B9B9B} } \\ \hline
+\end{tabular}
+\caption{Temperatures in degrees for different location red: significant}
+\label{tb:avg}
+\end{table}
+
+\newpage
+As visible from table \ref{tb:avg}, the differences between the two glaciers are not significant, while the difference between the Lufthavn and a glacier is significant. This is probably due to the fact that the Lufthavn is not a glacier and has a lower average albedo. Thereby, in summer, the average temperatures of glaciers usually are not rising above 0 degrees Celsius, because the energy from the heat is converted into melt energy.\\
+
+Since temperatures at two meter are interpolated from other variables for the Nordenski\H{o}ldbreen and Ulvebreen, the surface temperature of both glaciers Nordenski\H{o}ldbreen and Ulvebreen are compared with each other, visible in figure 
+\ref{fig:Tsurf}. Again, this is only done for the period with overlapping data. Looking through the different values at the axis, the Nordenski\H{o}ldbreen looks colder. To correct for this, again the lapse rate is used of 2,3 degrees which is added to the data, corresponding to the black line in figure \ref{fig:Tsurf}. For example, when a temperature of -10 degrees Celcius is reached at the Ulvebreen, it has to be -12,3 degrees at Nordenski\H{o}ldbreen when corrected for height. With this lapse rate, it is 0.15 degrees Celcius warmer at the Ulvebreen than expected. Again, a T-test is done for the difference in surface temperatures for both glaciers. With a p-value of 0.7, the Ulvebreen is not significant warmer than the Nordenski\H{o}ldbreen.
 
 \begin{figure}[h]
 \centering{}
@@ -251,20 +246,22 @@ To conclude, taking into account the lapse rate, the temperatures overlap really
     \caption{Comparison of surface temperature of Ulvebreen, visible at the x-axis and the Nordenski\H{o}ldbreen, visible at the y-axis. In colors, the dates are visible from summer 2015 in red below, via winter 2015 in blue, to summer 2016 above, again in red. For explanation of the black line, see text.}
 \end{figure}
 
+To conclude, taking into account the lapse rate, the temperatures overlap really well. So, the temperature differences between the locations of the measurement are related to the height of the measurements.
+
 \newpage
-However, also visible in figure \ref{fig:Tsurf} are the temperatures which are slightly above 0 degrees for both glaciers. This is not expected, because at a value of 0 degrees, the ice will melt and the energy will be converted. To investigate this furthermore, the incoming shortwave radiation is compared with the wind speed and hut temperature for the Nordenski\H{o}ldbreen. For this, all years of data of the Nordenski\H{o}ldbreen is used between 21 June and 21 September. This is plotted in figure \ref{fig:Thut}. If the sensor is influenced by the wind speed, we expected a higher temperature of the hut at a lower wind speed and a high incoming surface radiation. Unfortunately, no clearly relation is visible. With this, we can conclude that the sensors of surface temperature of both glaciers do probably have a short standard deviation. 
+However, also visible in figure \ref{fig:Tsurf} are the temperatures which are slightly above 0 degrees for both glaciers. This is not expected, because at a value of 0 degrees, the ice will melt and the energy will be converted. To investigate this furthermore, the incoming shortwave radiation is compared with the wind speed and hut temperature for the Nordenski\H{o}ldbreen. For this, all years of data of the Nordenski\H{o}ldbreen is used between 21 June and 21 September. This is plotted in figure \ref{fig:Thut}. If the sensor is influenced by the wind speed, we expected a higher temperature of the surface at a lower wind speed and a high incoming surface radiation. This is recognizable to the dark red dots at the left upper corner. With this, we can conclude that the sensors of surface temperature of both glaciers do probably have a small uncertainty.
 
 \begin{figure}[h]
 \centering{}
     \includegraphics[scale=0.5, width=0.5\textwidth]{Thut-Sin.jpg}
     \label{fig:Thut}
-    \caption{Comparison of the wind speed at the x-axis, the incoming shortwave radiation at the y-axis and the hut temperature corresponding to the colorbar at Nordenski\H{o}ldbreen for all available years between 21 June and 21 September (summer) }
+    \caption{Comparison of the wind speed at the x-axis, the incoming shortwave radiation at the y-axis and the surface temperature corresponding to the colorbar at Nordenski\H{o}ldbreen for all available years between 21 June and 21 September (summer) }
 \end{figure}
 
 
 \newpage
 \section{Prevailing winds}\label{sec:katw}
-Next to the temperatures of the glaciers, the differences in wind direction and wind speed are investigated. This is done for both glaciers apart, to take all data points of each glacier into account. Results are visible in the plots in figure \ref{fig:PR}. 
+Next to the temperatures of the glaciers, differences in wind direction and wind speed are investigated. This is done for both glaciers apart, to take into account all data points of each glacier. Results are visible in figure \ref{fig:PR}.
 
 \begin{figure}[h]
 \includegraphics[scale=1, width=0.5\textwidth]{WD-WS-PR-Nordenskioldbreen.png}
@@ -273,51 +270,66 @@ Next to the temperatures of the glaciers, the differences in wind direction and 
 \label{fig:PR}
 \end{figure}
 
-Within these plots, katabatic winds are clearly visible at the Ulvebreen at 250 degrees. Comparing this again to the map in figure \ref{fig:ulve}, direction is visible.
-
-
-%suggesties:
-%valley glacier?
-%breedte glacier vs tunneling effect?
-%Schaduw van eigen sensor?
-%vergelijken wolkenvrije dagen versus schaduw versus windrichting
-%schaduwwerking sensor
-%topografie
-%ra ging kapot dus los van mast?
-%zomermaanden water, vries vast in winter
-
-
-%a wind that carries high-density air from a higher elevation down a slope under the force of gravity.
-
-Usually the higher the wind speed, the lower the pressure, but an exception is visible for the katabatic wind speed. Thereby around 
-Nordeskioldbreen 50 graden met een breder spectrum, omdat uit verschillende hoeken wind mogelijk. 
-
-
-
-\begin{figure}[h]
-\includegraphics[scale=1, width=0.55\textwidth]{norde-WS-WD.jpg}
-\includegraphics[scale=1, width=0.45\textwidth]{norde-WS-WD-rose-2.jpg}
-\caption{Left: Comparison of the wind direction at x-axis, wind speed at y-axis and the corresponding pressure, related to the colorbar. Right: Maps with wind directions, related to colors left.}
-\label{fig:PRnorde}
-\end{figure}
+Within these plots, clearly visible are the lower values of pressures at higher wind speeds and vice versa. These are caused by the synoptic atmospheric low pressure system. Some wind directions can reach higher wind speeds, for example at the Nordenski\H{o}ldbreen at around 60 degrees and at the Ulvebreen at 250 degrees. To investigate this furtermore, the differences in temperatures between two meter and surface are plotted instead of the related pressure, which is visible for the Nordenski\H{o}ldbreen in figure \ref{fig:PRnorde} and for the Ulvebreen in figure \ref{fig:PRulve}. Remarkable wind directions and wind speeds refer to coloured arrows. In red, the arrow corresponds to the katabatic wind, where wind is blowing down glacier corresponding to higher wind speeds and a warmer temperature at 2 meter instead of the surface temperature. This is because of the horizontal pressure gradient. At the right side in those figures, the map is plotted with the location of the weather station and the corresponding coloured arrows. 
 
 \begin{figure}[h]
 \includegraphics[scale=1, width=0.55\textwidth]{ulve-WS-WD.jpg}
-\includegraphics[scale=1, width=0.45\textwidth]{ulve-WS-WD-rose-1.jpg}
-\caption{Left: Comparison of the wind direction at x-axis, wind speed at y-axis and the corresponding pressure, related to the colorbar. Right: Maps with wind directions, related to colors left.}
+\includegraphics[scale=1, width=0.45\textwidth]{norde-WS-WD-rose-2.jpg}
+\caption{Left: Comparison for the Nordenski\H{o}ldbreen of the wind direction at x-axis, wind speed at y-axis and the corresponding pressure, related to the color bar. Right: Maps with wind directions, related to the colored arrows. In red temperature at two meter is higher than the surface temperature, conversely in blue.}
+\label{fig:PRnorde}
+\end{figure}
+
+As can be seen in figure \ref{fig:PRnorde}, the wind directions overlap really well with the expected wind directions related to higher wind speeds; wind is coming down glacier at 60 degrees and from the bay up glacier at 240 degrees. This is probably caused by wind blowing through the fjord and tunneling in the bay. A third peak is visible at 320 degrees where wind is coming from the saddle. Thereby between roughly 0 and 50 degrees, a bigger spectrum of relatively high wind speeds are visible. This is presumably because of the different possible corners.
+
+\begin{figure}[h]
+\includegraphics[scale=1, width=0.6\textwidth]{norde-WS-WD.jpg}
+\includegraphics[scale=1, width=0.40\textwidth]{ulve-WS-WD-rose-1.jpg}
+\caption{Left: Comparison for the Ulvebreen of the wind direction at x-axis, wind speed at y-axis and the corresponding pressure, related to the color bar. Right: Maps with wind directions, related to the colored arrows. In red temperature at two meter is higher than the surface temperature, conversely in blue.}
 \label{fig:PRulve}
 \end{figure}
 
+However, as visible in figure \ref{fig:PRulve}, at the Ulvebreen, wind directions are not overlapping with expectations. For example, higher wind speed at a wind direction of 240 degrees is corresponding to a wind uphill. The results are more overlapping with expectations when turning both arrows for about 15 degrees to the left. In this case, both wind arrows are corresponding to down-glacier winds. This is probably caused by a veering part of the construction of the instrument.
 
 \newpage
-\section{Radiation, snow height, albedo}\label{sec:rad}
-\includegraphics[scale=1, width=0.35\textwidth]{Picture1.jpg}
-\includegraphics[scale=1, width=0.35\textwidth]{Picture2.jpg}
+Dit mag weg na lay out.
+\newpage
+\section{Snow and albedo}\label{sec:rad}
+In this section, the relation between snow height and albedo of the Nordenski\H{o}ldbreen and the Ulvebreen is furthermore investigated.
 
+
+Plot: snow surface height for both glaciers through the year in triangles, albedo in dots. Snow surface height is not corrected. Plotted is distance from sensor to snow surface so low values = high snow surface. See snow falling trough the winter, then melt starts. In left we see snow already started to fall on Nordenskioldbreen in the albedo values, because of colder because height. Point out snowfall events at both locations. Different influence from different coast. Overlap in measurements not long enough to see full cycle. Look at full measurement for both glaciers.
+
+\begin{figure}[h]
+\includegraphics[scale=1, width=1\textwidth]{Picture1.jpg}
+
+\caption{Caption}
+\label{fig: S1}
+\end{figure}
+
+Now snow height is corrected to snow height compared to minimum. First: sea snow fall. Albedo increases. Than: first melt, fresh snow -> old snow, see first decrease in albedo. Than melt ends and level stays stable: glacier surface. Old snow -> ice. Albedo jumps to much lower values. Few snow fall events with slightly higher snow height and fast higher albedo. Cycle continues. 
+
+(In winter albedo cannot be calculated because less S-in.)
+
+\begin{figure}[h]
+\includegraphics[scale=1, width=1\textwidth]{Picture2.jpg}
+
+\caption{Caption}
+\label{fig: S2}
+\end{figure}
+
+Also for Nordenskioldbreen to see overlap in melt and albedo decrease. Snow height sensor here different: Drilled in ice so also height differences in ice height visible. No stable summer period. Correlation less visible.
+
+\begin{figure}[h]
+\includegraphics[scale=1, width=1\textwidth]{Picture3.jpg}
+
+\caption{Caption}
+\label{fig: S3}
+\end{figure}
 
 \chapter{Discussion}\label{sec:discussion}
 \includegraphics[scale=1, width=0.35\textwidth]{ostby.jpg}
 \cite{osby}
+
 
 
 

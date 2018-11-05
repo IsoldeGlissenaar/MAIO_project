@@ -178,14 +178,14 @@ vrijdheidsgraad = 272+272 -2
 
 import scipy.stats
 def pstat(T1, T2, T1name):
-    print (np.mean(T2-T1), ' degrees Celsius colder in', T1name, ' than expected from lapse rate')
+    print (np.mean(T2-T1), ' degrees Celsius warmer in', T1name, ' than expected from lapse rate')
     p = scipy.stats.ttest_ind(T1, T2)
     print(p)
     
 
-pstat(T_nomask[:,0]+2.334,T_nomask[:,1], 'Ulvebreen')
-pstat(T_nomask[:,1],T_nomask[:,2]+3, 'Nordenskioldbreen')
-pstat(T_nomask[:,2]+0.67,T_nomask[:,0], 'Lufthavn')
+pstat(T_nomask[:,0]+3.17,T_nomask[:,1]+0.84, 'Ulvebreen')
+pstat(T_nomask[:,1]+0.84,T_nomask[:,2]+0.17, 'Lufthavn')
+pstat(T_nomask[:,2]+0.17,T_nomask[:,0]+3.17, 'Nordeskioldbreen')
 
 
 #%%
