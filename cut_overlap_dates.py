@@ -160,8 +160,6 @@ plt.show()
 #plt.plot(nomask_dates, np.zeros(len(nomask_dates)))
 #plt.show()
 
-print (np.mean(T_nomask[:,1]-(T_nomask[:,0]+2.334)), ' degrees Celsius colder in Ulvebreen',
-       'than expected from lapse rate')
 
 #plt.scatter(T_nomask[:,1],T_nomask[:,0])
 #plt.plot(T_nomask[:,0]+2.334,T_nomask[:,0])
@@ -179,9 +177,16 @@ t = (av_ulv-av_nord)/var
 vrijdheidsgraad = 272+272 -2
 
 import scipy.stats
-a = T_nomask[:,0]+2.334
-b = T_nomask[:,1]
-p = scipy.stats.ttest_ind(a,b)
+def pstat(T1, T2, T1name):
+    print (np.mean(T2-T1), ' degrees Celsius colder in', T1name, ' than expected from lapse rate')
+    p = scipy.stats.ttest_ind(T1, T2)
+    print(p)
+    
+
+pstat(T_nomask[:,0]+2.334,T_nomask[:,1], 'Ulvebreen')
+pstat(T_nomask[:,1],T_nomask[:,2]+3, 'Nordenskioldbreen')
+pstat(T_nomask[:,2]+0.67,T_nomask[:,0], 'Lufthavn')
+
 
 #%%
 
