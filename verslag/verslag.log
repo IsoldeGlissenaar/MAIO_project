@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.8.17)  25 OCT 2018 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.8.17)  5 NOV 2018 19:10
 entering extended mode
 **./verslag.tex
 (verslag.tex
@@ -466,25 +466,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@@todonotes@numberoftodonotes=\count141
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-libraryshapes.geometric.code.tex"
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
-)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
-.geometric.code.tex"
-File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
-
-))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-libraryarrows.code.tex"
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
-ex"
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen167
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
@@ -499,8 +481,8 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-\AM@pagewidth=\dimen168
-\AM@pageheight=\dimen169
+\AM@pagewidth=\dimen167
+\AM@pageheight=\dimen168
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
@@ -510,21 +492,276 @@ File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks35
 \c@AM@survey=\count142
 \AM@templatesizebox=\box39
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
+Package: expl3 2018-10-31 L3 programming layer (loader) 
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
+Package: expl3 2018-10-31 L3 programming layer (code)
+\c_max_int=\count143
+\l_tmpa_int=\count144
+\l_tmpb_int=\count145
+\g_tmpa_int=\count146
+\g_tmpb_int=\count147
+\g__kernel_prg_map_int=\count148
+\c_log_iow=\count149
+\l_iow_line_count_int=\count150
+\l__iow_line_target_int=\count151
+\l__iow_one_indent_int=\count152
+\l__iow_indent_int=\count153
+\c_zero_dim=\dimen169
+\c_max_dim=\dimen170
+\l_tmpa_dim=\dimen171
+\l_tmpb_dim=\dimen172
+\g_tmpa_dim=\dimen173
+\g_tmpb_dim=\dimen174
+\c_zero_skip=\skip48
+\c_max_skip=\skip49
+\l_tmpa_skip=\skip50
+\l_tmpb_skip=\skip51
+\g_tmpa_skip=\skip52
+\g_tmpb_skip=\skip53
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count154
+\l__intarray_loop_int=\count155
+\c__intarray_sp_dim=\dimen175
+\g__intarray_font_int=\count156
+\c__fp_leading_shift_int=\count157
+\c__fp_middle_shift_int=\count158
+\c__fp_trailing_shift_int=\count159
+\c__fp_big_leading_shift_int=\count160
+\c__fp_big_middle_shift_int=\count161
+\c__fp_big_trailing_shift_int=\count162
+\c__fp_Bigg_leading_shift_int=\count163
+\c__fp_Bigg_middle_shift_int=\count164
+\c__fp_Bigg_trailing_shift_int=\count165
+\c__kernel_randint_max_int=\count166
+\g__fp_array_int=\count167
+\l__fp_array_loop_int=\count168
+\l__sort_length_int=\count169
+\l__sort_min_int=\count170
+\l__sort_top_int=\count171
+\l__sort_max_int=\count172
+\l__sort_true_max_int=\count173
+\l__sort_block_int=\count174
+\l__sort_begin_int=\count175
+\l__sort_end_int=\count176
+\l__sort_A_int=\count177
+\l__sort_B_int=\count178
+\l__sort_C_int=\count179
+\l__tl_analysis_normal_int=\count180
+\l__tl_analysis_index_int=\count181
+\l__tl_analysis_nesting_int=\count182
+\l__tl_analysis_type_int=\count183
+\l__regex_internal_a_int=\count184
+\l__regex_internal_b_int=\count185
+\l__regex_internal_c_int=\count186
+\l__regex_balance_int=\count187
+\l__regex_group_level_int=\count188
+\l__regex_mode_int=\count189
+\c__regex_cs_in_class_mode_int=\count190
+\c__regex_cs_mode_int=\count191
+\l__regex_catcodes_int=\count192
+\l__regex_default_catcodes_int=\count193
+\c__regex_catcode_D_int=\count194
+\c__regex_catcode_S_int=\count195
+\c__regex_catcode_L_int=\count196
+\c__regex_catcode_O_int=\count197
+\c__regex_catcode_A_int=\count198
+\c__regex_all_catcodes_int=\count199
+\l__regex_show_lines_int=\count266
+\l__regex_min_state_int=\count267
+\l__regex_max_state_int=\count268
+\l__regex_left_state_int=\count269
+\l__regex_right_state_int=\count270
+\l__regex_capturing_group_int=\count271
+\l__regex_min_pos_int=\count272
+\l__regex_max_pos_int=\count273
+\l__regex_curr_pos_int=\count274
+\l__regex_start_pos_int=\count275
+\l__regex_success_pos_int=\count276
+\l__regex_curr_char_int=\count277
+\l__regex_curr_catcode_int=\count278
+\l__regex_last_char_int=\count279
+\l__regex_case_changed_char_int=\count280
+\l__regex_curr_state_int=\count281
+\l__regex_step_int=\count282
+\l__regex_min_active_int=\count283
+\l__regex_max_active_int=\count284
+\l__regex_replacement_csnames_int=\count285
+\l__regex_match_count_int=\count286
+\l__regex_min_submatch_int=\count287
+\l__regex_submatch_int=\count288
+\l__regex_zeroth_submatch_int=\count289
+\g__regex_trace_regex_int=\count290
+\c_empty_box=\box40
+\l_tmpa_box=\box41
+\l_tmpb_box=\box42
+\g_tmpa_box=\box43
+\g_tmpb_box=\box44
+\l__box_top_dim=\dimen176
+\l__box_bottom_dim=\dimen177
+\l__box_left_dim=\dimen178
+\l__box_right_dim=\dimen179
+\l__box_top_new_dim=\dimen180
+\l__box_bottom_new_dim=\dimen181
+\l__box_left_new_dim=\dimen182
+\l__box_right_new_dim=\dimen183
+\l__box_internal_box=\box45
+\l__coffin_internal_box=\box46
+\l__coffin_internal_dim=\dimen184
+\l__coffin_offset_x_dim=\dimen185
+\l__coffin_offset_y_dim=\dimen186
+\l__coffin_x_dim=\dimen187
+\l__coffin_y_dim=\dimen188
+\l__coffin_x_prime_dim=\dimen189
+\l__coffin_y_prime_dim=\dimen190
+\c_empty_coffin=\box47
+\l__coffin_aligned_coffin=\box48
+\l__coffin_aligned_internal_coffin=\box49
+\l_tmpa_coffin=\box50
+\l_tmpb_coffin=\box51
+\l__coffin_display_coffin=\box52
+\l__coffin_display_coord_coffin=\box53
+\l__coffin_display_pole_coffin=\box54
+\l__coffin_display_offset_dim=\dimen191
+\l__coffin_display_x_dim=\dimen192
+\l__coffin_display_y_dim=\dimen193
+\g__file_internal_ior=\read2
+\l__coffin_bounding_shift_dim=\dimen194
+\l__coffin_left_corner_dim=\dimen195
+\l__coffin_right_corner_dim=\dimen196
+\l__coffin_bottom_corner_dim=\dimen197
+\l__coffin_top_corner_dim=\dimen198
+\l__coffin_scaled_total_height_dim=\dimen199
+\l__coffin_scaled_width_dim=\dimen256
+\l__seq_internal_a_int=\count291
+\l__seq_internal_b_int=\count292
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
+File: l3pdfmode.def 2018-10-31 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count293
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
+Package: xparse 2018-10-17 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count294
+\g__xparse_grabber_int=\count295
+\l__xparse_m_args_int=\count296
+\l__xparse_mandatory_args_int=\count297
+\l__xparse_v_nesting_int=\count298
+)
+Package: siunitx 2018/05/17 v2.7s A comprehensive (SI) units package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen257
+\ar@mcellbox=\box55
+\extrarowheight=\dimen258
+\NC@list=\toks36
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box56
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
+Package: l3keys2e 2018-10-17 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box57
+\l__siunitx_tmp_dim=\dimen259
+\l__siunitx_tmp_int=\count299
+\l__siunitx_number_mantissa_length_int=\count300
+\l__siunitx_number_uncert_length_int=\count301
+\l__siunitx_round_int=\count302
+\l__siunitx_process_decimal_int=\count303
+\l__siunitx_process_uncertainty_int=\count304
+\l__siunitx_process_fixed_int=\count305
+\l__siunitx_process_integer_min_int=\count306
+\l__siunitx_process_precision_int=\count307
+\l__siunitx_group_min_int=\count308
+\l__siunitx_angle_marker_box=\box58
+\l__siunitx_angle_unit_box=\box59
+\l__siunitx_angle_marker_dim=\dimen260
+\l__siunitx_angle_unit_dim=\dimen261
+\l__siunitx_unit_int=\count309
+\l__siunitx_unit_denominator_int=\count310
+\l__siunitx_unit_numerator_int=\count311
+\l__siunitx_unit_prefix_int=\count312
+\l__siunitx_unit_prefix_base_int=\count313
+\l__siunitx_unit_prefix_gram_int=\count314
+\l__siunitx_number_product_int=\count315
+\c__siunitx_one_fill_skip=\skip56
+\l__siunitx_table_unit_align_skip=\skip57
+\l__siunitx_table_exponent_dim=\dimen262
+\l__siunitx_table_integer_dim=\dimen263
+\l__siunitx_table_mantissa_dim=\dimen264
+\l__siunitx_table_marker_dim=\dimen265
+\l__siunitx_table_result_dim=\dimen266
+\l__siunitx_table_uncert_dim=\dimen267
+\l__siunitx_table_fill_pre_dim=\dimen268
+\l__siunitx_table_fill_post_dim=\dimen269
+\l__siunitx_table_fill_mid_dim=\dimen270
+\l__siunitx_table_pre_box=\box60
+\l__siunitx_table_post_box=\box61
+\l__siunitx_table_mantissa_box=\box62
+\l__siunitx_table_result_box=\box63
+\l__siunitx_table_number_align_skip=\skip58
+\l__siunitx_table_text_align_skip=\skip59
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\translator\translator.sty"
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+))
+
+! LaTeX Error: Option clash for package xcolor.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \usepackage
+                {multirow,colortbl,array}
+The package xcolor has already been loaded with options:
+  []
+There has now been an attempt to load it with options
+  [HTML]
+Adding the global options:
+  ,HTML
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count316
+\multirow@dima=\skip61
+\bigstrutjot=\dimen271
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2018/05/02 v1.0c Color table columns (DPC)
+\everycr=\toks37
+\minrowclearance=\skip62
 ) (verslag.aux)
 \openout1 = `verslag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -562,17 +799,17 @@ LaTeX Font Info:    ... okay on input line 26.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count143
-\scratchdimen=\dimen170
-\scratchbox=\box40
-\nofMPsegments=\count144
-\nofMParguments=\count145
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count146
-\MPscratchDim=\dimen171
-\MPnumerator=\count147
-\makeMPintoPDFobject=\count148
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count317
+\scratchdimen=\dimen272
+\scratchbox=\box64
+\nofMPsegments=\count318
+\nofMParguments=\count319
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen273
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
+\everyMPtoPDFconversion=\toks39
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -619,7 +856,7 @@ G,.JBIG2,.JB2,.eps]
 File: fc-english.def 2016/01/12
 )
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box41
+\AtBeginShipoutBox=\box65
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
@@ -629,25 +866,112 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\translator\translator-basic-dictionary-
+English.dict"
+Dictionary: translator-basic-dictionary, Language: English 
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx-abbreviations.cfg"
+File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 56.
+(Font)              <10.95> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 56.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 56.
+(Font)              <6> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 60.
 <UU-logo.jpg, id=4, 215.8464pt x 55.407pt>
 File: UU-logo.jpg Graphic file (type jpg)
 <use UU-logo.jpg>
-Package pdftex.def Info: UU-logo.jpg  used on input line 59.
+Package pdftex.def Info: UU-logo.jpg  used on input line 63.
 (pdftex.def)             Requested size: 215.84587pt x 55.40685pt.
- [1
+<imau.png, id=5, 157.58875pt x 83.31125pt>
+File: imau.png Graphic file (type png)
+<use imau.png>
+Package pdftex.def Info: imau.png  used on input line 65.
+(pdftex.def)             Requested size: 157.58835pt x 83.31104pt.
+
+[1
 
 {C:/Users/d-vz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./UU-logo.jp
-g>]
-(verslag.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 12.
-)
+g> <./imau.png>] (verslag.toc)
 \tf@toc=\write4
 \openout4 = `verslag.toc'.
 
@@ -655,12 +979,48 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Chapter 1.
+
+LaTeX Warning: Citation `sval' on page 2 undefined on input line 81.
+
+
+LaTeX Warning: Reference `fig:wbs' on page 2 undefined on input line 81.
+
+
+LaTeX Warning: Citation `sees' on page 2 undefined on input line 81.
+
+
+LaTeX Warning: File `wbs.jpg' not found on input line 84.
+
+
+! Package pdftex.def Error: File `wbs.jpg' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 ...ics[scale=1, width=0.5\textwidth]{wbs.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [2
 
 ]
 Chapter 2.
 
-LaTeX Warning: File `currents_svalbard.jpg' not found on input line 87.
+LaTeX Warning: Reference `sec:loc' on page 3 undefined on input line 103.
+
+
+LaTeX Warning: Reference `sec:instr' on page 3 undefined on input line 103.
+
+
+LaTeX Warning: Reference `sec:datah' on page 3 undefined on input line 103.
+
+
+LaTeX Warning: Reference `fig:current' on page 3 undefined on input line 109.
+
+
+LaTeX Warning: File `currents_svalbard.jpg' not found on input line 113.
 
 
 ! Package pdftex.def Error: File `currents_svalbard.jpg' not found: using draft
@@ -670,13 +1030,17 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.87 ...dth=0.35\textwidth]{currents_svalbard.jpg}
+l.113 ...dth=0.5\textwidth]{currents_svalbard.jpg}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `svalbard_locations.png' not found on input line 88.
+LaTeX Warning: Reference `fig:locations' on page 3 undefined on input line 119.
+
+
+
+LaTeX Warning: File `svalbard_locations.png' not found on input line 122.
 
 
 ! Package pdftex.def Error: File `svalbard_locations.png' not found: using draf
@@ -686,133 +1050,346 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 ...th=0.35\textwidth]{svalbard_locations.png}
+l.122 ...th=0.5\textwidth]{svalbard_locations.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<ulvemap.jpg, id=22, 651.95148pt x 410.03716pt>
-File: ulvemap.jpg Graphic file (type jpg)
-<use ulvemap.jpg>
-Package pdftex.def Info: ulvemap.jpg  used on input line 93.
-(pdftex.def)             Requested size: 651.94987pt x 410.03615pt.
-<nskimap.jpg, id=23, 794.97pt x 510.14117pt>
-File: nskimap.jpg Graphic file (type jpg)
-<use nskimap.jpg>
-Package pdftex.def Info: nskimap.jpg  used on input line 94.
-(pdftex.def)             Requested size: 794.96806pt x 510.13992pt.
-<view1.jpg, id=24, 469.2732pt x 308.352pt>
-File: view1.jpg Graphic file (type jpg)
-<use view1.jpg>
-Package pdftex.def Info: view1.jpg  used on input line 96.
-(pdftex.def)             Requested size: 469.27205pt x 308.35124pt.
-<view2.jpg, id=25, 816.80156pt x 185.94469pt>
-File: view2.jpg Graphic file (type jpg)
-<use view2.jpg>
-Package pdftex.def Info: view2.jpg  used on input line 97.
-(pdftex.def)             Requested size: 816.79956pt x 185.94421pt.
+<height.jpg, id=26, 223.0734pt x 402.303pt>
+File: height.jpg Graphic file (type jpg)
+<use height.jpg>
+Package pdftex.def Info: height.jpg  used on input line 123.
+(pdftex.def)             Requested size: 223.07285pt x 402.302pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:norden' on page 3 undefined on input line 129.
+
+
+LaTeX Warning: Reference `fig:ulve' on page 3 undefined on input line 131.
+
 [3
 
- <./ulvemap.jpg> <./nskimap.jpg> <./view1.jpg> <./view2.jpg>]
+]
 
-LaTeX Warning: Reference `fig:instrumentn' on page 4 undefined on input line 10
-1.
+LaTeX Warning: Reference `fig:locations' on page 4 undefined on input line 133.
 
 
-LaTeX Warning: Reference `fig:instrumentu' on page 4 undefined on input line 10
-1.
+<nskimap.jpg, id=32, 794.97pt x 510.14117pt>
+File: nskimap.jpg Graphic file (type jpg)
+<use nskimap.jpg>
+Package pdftex.def Info: nskimap.jpg  used on input line 136.
+(pdftex.def)             Requested size: 794.96806pt x 510.13992pt.
+<view1.jpg, id=33, 469.2732pt x 308.352pt>
+File: view1.jpg Graphic file (type jpg)
+<use view1.jpg>
+Package pdftex.def Info: view1.jpg  used on input line 137.
+(pdftex.def)             Requested size: 469.27205pt x 308.35124pt.
+<ulvemap.jpg, id=34, 651.95148pt x 410.03716pt>
+File: ulvemap.jpg Graphic file (type jpg)
+<use ulvemap.jpg>
+Package pdftex.def Info: ulvemap.jpg  used on input line 144.
+(pdftex.def)             Requested size: 651.94987pt x 410.03615pt.
+<view2.jpg, id=35, 816.80156pt x 185.94469pt>
+File: view2.jpg Graphic file (type jpg)
+<use view2.jpg>
+Package pdftex.def Info: view2.jpg  used on input line 145.
+(pdftex.def)             Requested size: 816.79956pt x 185.94421pt.
 
-<nski.jpg, id=31, 262.73157pt x 376.40625pt>
-File: nski.jpg Graphic file (type jpg)
-<use nski.jpg>
-Package pdftex.def Info: nski.jpg  used on input line 136.
-(pdftex.def)             Requested size: 146.38814pt x 209.72925pt.
-<ulve.jpg, id=32, 259.7203pt x 376.40625pt>
-File: ulve.jpg Graphic file (type jpg)
-<use ulve.jpg>
-Package pdftex.def Info: ulve.jpg  used on input line 142.
-(pdftex.def)             Requested size: 146.38814pt x 212.153pt.
-[4 <./nski.jpg> <./ulve.jpg>]
-Chapter 3.
-<T2mUlve-T2mNorde.png, id=36, 722.7pt x 722.7pt>
-File: T2mUlve-T2mNorde.png Graphic file (type png)
-<use T2mUlve-T2mNorde.png>
-Package pdftex.def Info: T2mUlve-T2mNorde.png  used on input line 159.
-(pdftex.def)             Requested size: 722.69823pt x 722.69823pt.
-<THUT-SIN-WS-Nordenskioldbreen.png, id=38, 867.24pt x 722.7pt>
-File: THUT-SIN-WS-Nordenskioldbreen.png Graphic file (type png)
-<use THUT-SIN-WS-Nordenskioldbreen.png>
-Package pdftex.def Info: THUT-SIN-WS-Nordenskioldbreen.png  used on input line 
-166.
-(pdftex.def)             Requested size: 867.2379pt x 722.69823pt.
-<THUT-T2m-WD-WS-Nordenskioldbreen.png, id=39, 867.24pt x 722.7pt>
-File: THUT-T2m-WD-WS-Nordenskioldbreen.png Graphic file (type png)
-<use THUT-T2m-WD-WS-Nordenskioldbreen.png>
-Package pdftex.def Info: THUT-T2m-WD-WS-Nordenskioldbreen.png  used on input li
-ne 167.
-(pdftex.def)             Requested size: 867.2379pt x 722.69823pt.
-<THUT-T2m-WD-WS-Ulvebreen.png, id=40, 867.24pt x 722.7pt>
-File: THUT-T2m-WD-WS-Ulvebreen.png Graphic file (type png)
-<use THUT-T2m-WD-WS-Ulvebreen.png>
-Package pdftex.def Info: THUT-T2m-WD-WS-Ulvebreen.png  used on input line 168.
-(pdftex.def)             Requested size: 867.2379pt x 722.69823pt.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Overfull \hbox (25.7633pt too wide) in paragraph at lines 166--169
-[][] [] [] 
+[4 <./height.jpg> <./nskimap.jpg> <./view1.jpg>]
+
+LaTeX Warning: Reference `fig:instrn' on page 5 undefined on input line 154.
+
+
+LaTeX Warning: Reference `fig:instru' on page 5 undefined on input line 154.
+
+<nski1.jpg, id=40, 406.1574pt x 396.0396pt>
+File: nski1.jpg Graphic file (type jpg)
+<use nski1.jpg>
+Package pdftex.def Info: nski1.jpg  used on input line 160.
+(pdftex.def)             Requested size: 188.21286pt x 183.52197pt.
+
+LaTeX Warning: Citation `uuproj' on page 5 undefined on input line 161.
+
+<ulve1.jpg, id=41, 469.755pt x 396.0396pt>
+File: ulve1.jpg Graphic file (type jpg)
+<use ulve1.jpg>
+Package pdftex.def Info: ulve1.jpg  used on input line 166.
+(pdftex.def)             Requested size: 219.5838pt x 185.1234pt.
+
+Overfull \hbox (10.45697pt too wide) in paragraph at lines 166--167
+ [][] 
  []
 
-<TsurfU-N.png, id=41, 722.7pt x 722.7pt>
-File: TsurfU-N.png Graphic file (type png)
-<use TsurfU-N.png>
-Package pdftex.def Info: TsurfU-N.png  used on input line 170.
-(pdftex.def)             Requested size: 722.69823pt x 722.69823pt.
-<WD-WS-PR-Nordenskioldbreen.png, id=42, 867.24pt x 722.7pt>
+
+LaTeX Warning: Citation `uuproj' on page 5 undefined on input line 167.
+
+
+LaTeX Warning: Reference `fig:instrn' on page 5 undefined on input line 172.
+
+
+LaTeX Warning: Reference `fig:instru' on page 5 undefined on input line 172.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+[5 <./ulvemap.jpg> <./view2.jpg> <./nski1.jpg> <./ulve1.jpg>]
+
+LaTeX Warning: Command \o invalid in math mode on input line 176.
+
+
+LaTeX Warning: Citation `uuproj' on page 6 undefined on input line 176.
+
+
+LaTeX Warning: Reference `fig:ablation' on page 6 undefined on input line 176.
+
+<abliationwire.jpg, id=45, 334.851pt x 208.98074pt>
+File: abliationwire.jpg Graphic file (type jpg)
+<use abliationwire.jpg>
+Package pdftex.def Info: abliationwire.jpg  used on input line 182.
+(pdftex.def)             Requested size: 334.85017pt x 208.98022pt.
+
+LaTeX Warning: Citation `abl' on page 6 undefined on input line 183.
+
+
+LaTeX Warning: Reference `fig:ablation' on page 6 undefined on input line 188.
+
+
+LaTeX Warning: Citation `abl' on page 6 undefined on input line 188.
+
+
+LaTeX Warning: Citation `sharkii' on page 6 undefined on input line 194.
+
+[6 <./abliationwire.jpg>] [7]
+Chapter 3.
+
+LaTeX Warning: Reference `sec:T' on page 8 undefined on input line 201.
+
+
+LaTeX Warning: Reference `sec:katw' on page 8 undefined on input line 201.
+
+
+LaTeX Warning: Reference `sec:rad' on page 8 undefined on input line 201.
+
+
+LaTeX Warning: Reference `fig:T2m' on page 8 undefined on input line 205.
+
+
+LaTeX Warning: Reference `sec:loc' on page 8 undefined on input line 205.
+
+<T2m.jpg, id=53, 1086.9408pt x 477.9456pt>
+File: T2m.jpg Graphic file (type jpg)
+<use T2m.jpg>
+Package pdftex.def Info: T2m.jpg  used on input line 209.
+(pdftex.def)             Requested size: 1086.93814pt x 477.94443pt.
+
+LaTeX Warning: Reference `tb:avg' on page 8 undefined on input line 223.
+
+
+Overfull \hbox (18.73586pt too wide) in paragraph at lines 226--233
+[][] 
+ []
+
+[8
+
+ <./T2m.jpg>]
+
+LaTeX Warning: Reference `tb:avg' on page 9 undefined on input line 238.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--239
+
+ []
+
+
+LaTeX Warning: Reference `fig:Tsurf' on page 9 undefined on input line 241.
+
+
+LaTeX Warning: Reference `fig:Tsurf' on page 9 undefined on input line 241.
+
+<Tsurf.jpg, id=58, 427.51268pt x 384.76141pt>
+File: Tsurf.jpg Graphic file (type jpg)
+<use Tsurf.jpg>
+Package pdftex.def Info: Tsurf.jpg  used on input line 245.
+(pdftex.def)             Requested size: 213.75581pt x 192.38023pt.
+[9 <./Tsurf.jpg>]
+
+LaTeX Warning: Reference `fig:Tsurf' on page 10 undefined on input line 252.
+
+
+LaTeX Warning: Reference `fig:Thut' on page 10 undefined on input line 252.
+
+<Thut-Sin.jpg, id=62, 451.94197pt x 384.76141pt>
+File: Thut-Sin.jpg Graphic file (type jpg)
+<use Thut-Sin.jpg>
+Package pdftex.def Info: Thut-Sin.jpg  used on input line 256.
+(pdftex.def)             Requested size: 225.97043pt x 192.38023pt.
+
+LaTeX Warning: Reference `fig:PR' on page 10 undefined on input line 262.
+
+<WD-WS-PR-Nordenskioldbreen.png, id=63, 867.24pt x 722.7pt>
 File: WD-WS-PR-Nordenskioldbreen.png Graphic file (type png)
 <use WD-WS-PR-Nordenskioldbreen.png>
-Package pdftex.def Info: WD-WS-PR-Nordenskioldbreen.png  used on input line 171
+Package pdftex.def Info: WD-WS-PR-Nordenskioldbreen.png  used on input line 265
 .
 (pdftex.def)             Requested size: 867.2379pt x 722.69823pt.
-<WD-WS-PR-Ulvebreen.png, id=43, 867.24pt x 722.7pt>
+<WD-WS-PR-Ulvebreen.png, id=65, 867.24pt x 722.7pt>
 File: WD-WS-PR-Ulvebreen.png Graphic file (type png)
 <use WD-WS-PR-Ulvebreen.png>
-Package pdftex.def Info: WD-WS-PR-Ulvebreen.png  used on input line 172.
+Package pdftex.def Info: WD-WS-PR-Ulvebreen.png  used on input line 266.
 (pdftex.def)             Requested size: 867.2379pt x 722.69823pt.
-<Picture1.jpg, id=44, 725.75366pt x 363.38577pt>
-File: Picture1.jpg Graphic file (type jpg)
-<use Picture1.jpg>
-Package pdftex.def Info: Picture1.jpg  used on input line 173.
-(pdftex.def)             Requested size: 725.75189pt x 363.38487pt.
-<Picture2.jpg, id=45, 817.1328pt x 480.3546pt>
-File: Picture2.jpg Graphic file (type jpg)
-<use Picture2.jpg>
-Package pdftex.def Info: Picture2.jpg  used on input line 174.
-(pdftex.def)             Requested size: 817.1308pt x 480.35342pt.
 
-Overfull \hbox (25.76991pt too wide) in paragraph at lines 170--175
-[][] [] []
+Overfull \hbox (2.42184pt too wide) in paragraph at lines 265--267
+[][] [] 
  []
 
-[5
 
- <./T2mUlve-T2mNorde.png> <./THUT-SIN-WS-Nordenskioldbreen.png> <./THUT-T2m-WD-
-WS-Nordenskioldbreen.png> <./THUT-T2m-WD-WS-Ulvebreen.png> <./TsurfU-N.png> <./
-WD-WS-PR-Nordenskioldbreen.png> <./WD-WS-PR-Ulvebreen.png>] [6 <./Picture1.jpg>
- <./Picture2.jpg>]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:PRnorde' on page 10 undefined on input line 271.
+
+
+LaTeX Warning: Reference `fig:PRulve' on page 10 undefined on input line 271.
+
+<ulve-WS-WD.jpg, id=66, 457.2282pt x 390.7398pt>
+File: ulve-WS-WD.jpg Graphic file (type jpg)
+<use ulve-WS-WD.jpg>
+Package pdftex.def Info: ulve-WS-WD.jpg  used on input line 274.
+(pdftex.def)             Requested size: 457.22708pt x 390.73885pt.
+<norde-WS-WD-rose-2.jpg, id=67, 369.5406pt x 352.1958pt>
+File: norde-WS-WD-rose-2.jpg Graphic file (type jpg)
+<use norde-WS-WD-rose-2.jpg>
+Package pdftex.def Info: norde-WS-WD-rose-2.jpg  used on input line 275.
+(pdftex.def)             Requested size: 369.53969pt x 352.19495pt.
+
+Overfull \hbox (2.43852pt too wide) in paragraph at lines 274--276
+[][] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:PRnorde' on page 10 undefined on input line 280.
+
+[10 <./Thut-Sin.jpg>]
+<norde-WS-WD.jpg, id=71, 461.5644pt x 397.0032pt>
+File: norde-WS-WD.jpg Graphic file (type jpg)
+<use norde-WS-WD.jpg>
+Package pdftex.def Info: norde-WS-WD.jpg  used on input line 283.
+(pdftex.def)             Requested size: 461.56328pt x 397.00223pt.
+<ulve-WS-WD-rose-1.jpg, id=72, 302.5704pt x 271.7352pt>
+File: ulve-WS-WD-rose-1.jpg Graphic file (type jpg)
+<use ulve-WS-WD-rose-1.jpg>
+Package pdftex.def Info: ulve-WS-WD-rose-1.jpg  used on input line 284.
+(pdftex.def)             Requested size: 302.56966pt x 271.73451pt.
+
+Overfull \hbox (2.4328pt too wide) in paragraph at lines 283--285
+[][] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:PRulve' on page 11 undefined on input line 289.
+
+
+LaTeX Warning: Reference `fig:S1' on page 11 undefined on input line 292.
+
+<Picture1.jpg, id=73, 865.20422pt x 321.65239pt>
+File: Picture1.jpg Graphic file (type jpg)
+<use Picture1.jpg>
+Package pdftex.def Info: Picture1.jpg  used on input line 295.
+(pdftex.def)             Requested size: 865.2021pt x 321.6516pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:S2' on page 11 undefined on input line 302.
+
+[11 <./WD-WS-PR-Nordenskioldbreen.png> <./WD-WS-PR-Ulvebreen.png>]
+<Picture2.jpg, id=79, 676.929pt x 390.7398pt>
+File: Picture2.jpg Graphic file (type jpg)
+<use Picture2.jpg>
+Package pdftex.def Info: Picture2.jpg  used on input line 305.
+(pdftex.def)             Requested size: 676.92735pt x 390.73885pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:S3' on page 12 undefined on input line 310.
+
+
+LaTeX Warning: Reference `fig:S3' on page 12 undefined on input line 310.
+
+<Picture3.jpg, id=80, 694.2738pt x 381.5856pt>
+File: Picture3.jpg Graphic file (type jpg)
+<use Picture3.jpg>
+Package pdftex.def Info: Picture3.jpg  used on input line 313.
+(pdftex.def)             Requested size: 694.2721pt x 381.58466pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12 <./ulve-WS-WD.jpg> <./norde-WS-WD-rose-2.jpg>] [13 <./norde-WS-WD.jpg> <./u
+lve-WS-WD-rose-1.jpg> <./Picture1.jpg>] [14 <./Picture2.jpg> <./Picture3.jpg>]
 Chapter 4.
-<ostby.jpg, id=60, 535.2497pt x 542.025pt>
+<ostby.jpg, id=91, 535.2497pt x 542.025pt>
 File: ostby.jpg Graphic file (type jpg)
 <use ostby.jpg>
-Package pdftex.def Info: ostby.jpg  used on input line 178.
+Package pdftex.def Info: ostby.jpg  used on input line 331.
 (pdftex.def)             Requested size: 535.24838pt x 542.02367pt.
-[7
+
+LaTeX Warning: Citation `osby' on page 15 undefined on input line 332.
+
+[15
 
  <./ostby.jpg>]
 Chapter 5.
-[8
+[16
 
-] [9
+]
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
-] [10
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 385--389
+[]\OT1/cmr/m/n/10.95 Website: Nor-we-gian Me-te-o-ro-log-i-cal In-sti-tute Sval
+-bard cli-mate data \OT1/cmr/m/it/10.95 Weather
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--389
+\OT1/cmr/m/it/10.95 statis-tics for Longyear-byen (Sval-bard)\OT1/cmr/m/n/10.95
+ , Re-trieved at 30-10-2018, from:
+ []
+
+
+Underfull \hbox (badness 3612) in paragraph at lines 400--402
+\OT1/cmr/m/n/10.95 and Rei-jmer, C. H.: \OT1/cmtt/m/n/10.95 Diagnosing the decl
+ine in climatic mass balance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--402
+\OT1/cmtt/m/n/10.95 of glaciers in Svalbard over 1957{2014\OT1/cmr/m/n/10.95 , 
+The Cryosphere, 11, 191-215
+ []
+
+[17
 
 ] (verslag.aux)
 
@@ -823,25 +1400,28 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 15664 strings out of 492973
- 310638 string characters out of 3135935
- 380774 words of memory out of 3000000
- 19200 multiletter control sequences out of 15000+200000
- 10274 words of font info for 36 fonts, out of 3000000 for 9000
+ 26463 strings out of 492973
+ 534882 string characters out of 3135935
+ 569297 words of memory out of 3000000
+ 29948 multiletter control sequences out of 15000+200000
+ 541325 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,76p,1009b,698s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,76p,1510b,881s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on verslag.pdf (11 pages, 2877865 bytes).
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on verslag.pdf (18 pages, 3379812 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,11 +1,15 @@
 \contentsline {chapter}{\numberline {1}Introduction}{2}
 \contentsline {chapter}{\numberline {2}Method}{3}
 \contentsline {section}{\numberline {2.1}Location}{3}
-\contentsline {section}{\numberline {2.2}Instruments}{4}
-\contentsline {section}{\numberline {2.3}Data handling}{4}
-\contentsline {chapter}{\numberline {3}Results}{5}
-\contentsline {chapter}{\numberline {4}Discussion}{7}
-\contentsline {chapter}{\numberline {5}Conclusion}{8}
-\contentsline {chapter}{Bibliography}{9}
-\contentsline {chapter}{Appendices}{10}
-\contentsline {section}{A. name}{10}
+\contentsline {section}{\numberline {2.2}Instruments}{5}
+\contentsline {section}{\numberline {2.3}Data handling}{6}
+\contentsline {chapter}{\numberline {3}Results}{8}
+\contentsline {section}{\numberline {3.1}Temperature}{8}
+\contentsline {section}{\numberline {3.2}Prevailing winds}{10}
+\contentsline {section}{\numberline {3.3}Snow and albedo}{11}
+\contentsline {chapter}{\numberline {4}Discussion}{15}
+\contentsline {section}{\numberline {4.1}Temperature}{15}
+\contentsline {section}{\numberline {4.2}Prevailing winds}{15}
+\contentsline {section}{\numberline {4.3}Snow and albedo}{15}
+\contentsline {chapter}{\numberline {5}Conclusion}{16}
+\contentsline {chapter}{Bibliography}{17}
