@@ -184,7 +184,7 @@ def pstat(T1, T2, T1name):
     
 
 pstat(T_nomask[:,0]+3.174,T_nomask[:,1]+0.84, 'Norde - Ulvebreen')
-pstat(T_nomask[:,1]+0.84,T_nomask[:,2]+0.1, 'Ulve - Lufthavn')
+pstat(T_nomask[:,1]+0.84,T_nomask[:,2]+0.168, 'Ulve - Lufthavn')
 pstat(T_nomask[:,2]+0.168,T_nomask[:,0]+3.174, 'Luft - Nordeskioldbreen')
 
 
